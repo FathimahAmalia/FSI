@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — PT Fortunet Solusi Indonesia</title>
+    <meta name="description" content="Contact PT Fortunet Solusi Indonesia for confidential TSCM audit consultations, anti-drone defense, or enterprise IT inquiries.">
+
+    <!-- Intek Authentic Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Orbitron:wght@600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="intek-body">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="intek-header">
+        <div class="intek-container header-inner">
+            <a href="index.html" class="intek-brand-logo">
+                <img src="assets/logo.png" alt="PT Fortunet Solusi Indonesia" class="brand-img">
+                <div class="brand-text">
+                    <span class="brand-name">FORTUNET</span>
+                    <span class="brand-sub">SOLUSI INDONESIA</span>
+                </div>
+            </a>
+
+            <nav class="intek-nav">
+                <ul class="intek-nav-list" id="navMenu">
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a href="about.html">About</a></li>
+                    <li class="nav-item"><a href="product.html">Product</a></li>
+                    <li class="nav-item active"><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- PAGE HERO -->
+        <section class="intek-hero">
+            <div class="intek-container hero-container">
+                <div class="hero-left-col">
+                    <h1 class="hero-title">
+                        GET IN <br><span class="accent-highlight">TOUCH</span>
+                    </h1>
+                    <div class="hero-paragraphs">
+                        <p>
+                            Reach out to our technical specialists for confidential consultation regarding technical surveillance countermeasures (TSCM), anti-drone defense systems, or enterprise IT hardware procurement.
+                        </p>
+                    </div>
+                </div>
+                <div class="hero-right-col">
+                    <div class="hero-logogram-wrap">
+                        <img src="assets/logo.png" alt="Fortunet Shield Emblem" class="hero-logogram">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTEK DIVIDER -->
+        <div class="intek-divider">
+            <span class="d-line"></span>
+            <span class="d-icon"><i class="fas fa-minus"></i></span>
+            <span class="d-line"></span>
+        </div>
+
+        <!-- CONTACT & FORM -->
+        <section class="intek-section" id="contact-form">
+            <div class="intek-container">
+                <div class="contact-dual-grid">
+                    <!-- Left Details -->
+                    <div class="contact-details-side">
+                        <div class="contact-detail-row">
+                            <span class="c-title">Office Phone:</span>
+                            <a href="tel:+622138711261" class="c-link">(+62 21) 3871-1261</a>
+                        </div>
+                        <div class="contact-detail-row">
+                            <span class="c-title">WhatsApp 24/7 Hotline:</span>
+                            <a href="https://wa.me/6281234567890" target="_blank" class="c-link">+62 812-3456-7890</a>
+                        </div>
+                        <div class="contact-detail-row">
+                            <span class="c-title">Official Email:</span>
+                            <a href="mailto:info@fortunetindonesia.com" class="c-link">info@fortunetindonesia.com</a>
+                        </div>
+                        <div class="contact-detail-row">
+                            <span class="c-title">Head Office:</span>
+                            <span class="c-text">Jakarta, Indonesia</span>
+                        </div>
+                        <div class="nda-callout">
+                            <strong><i class="fa-solid fa-shield-halved"></i> 100% Strict NDA Protection</strong>
+                            <p>All inquiries, company specifics, and facility information are legally protected under strict non-disclosure obligations.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Form -->
+                    <div class="contact-form-side">
+                        <form id="consultationForm" class="intek-contact-form" onsubmit="return handleFormSubmit(event)">
+                            <div class="form-field-row">
+                                <input type="text" id="clientName" placeholder="Your Full Name *" required>
+                                <input type="text" id="clientCompany" placeholder="Company / Organization *" required>
+                            </div>
+                            <div class="form-field-row">
+                                <input type="email" id="clientEmail" placeholder="Corporate Email *" required>
+                                <input type="tel" id="clientPhone" placeholder="Phone / WhatsApp *" required>
+                            </div>
+                            <div class="form-field-row">
+                                <select id="serviceNeeded" required>
+                                    <option value="" disabled selected>Select Service Required *</option>
+                                    <option value="TSCM Bug Sweeping & Sterilization">TSCM Bug Sweeping & Sterilization</option>
+                                    <option value="Anti-Drone Defense System">Anti-Drone Defense System</option>
+                                    <option value="Security Hardware Procurement">Security Hardware Procurement</option>
+                                    <option value="Enterprise IT & Servers">Enterprise IT & Servers</option>
+                                    <option value="AI Face Recognition & CCTV">AI Face Recognition & CCTV</option>
+                                </select>
+                            </div>
+                            <div class="form-field-row">
+                                <textarea id="clientMessage" rows="4" placeholder="Brief details about your requirements or facility..." required></textarea>
+                            </div>
+                            <button type="submit" class="intek-button full-width" id="submitBtn">Send Message</button>
+                            <div id="formFeedback" class="form-feedback hidden"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTEK DIVIDER -->
+        <div class="intek-divider">
+            <span class="d-line"></span>
+            <span class="d-icon"><i class="fas fa-minus"></i></span>
+            <span class="d-line"></span>
+        </div>
+
+        <!-- BANNER -->
+        <section class="intek-banner-area">
+            <div class="intek-container">
+                <div class="banner-content-box">
+                    <h2 class="banner-main-title">Lead the way in business &amp; technology with our advanced solutions.</h2>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="intek-footer">
+        <div class="intek-container footer-inner">
+            <div class="footer-left">
+                <a href="index.html" class="intek-brand-logo footer-logo">
+                    <img src="assets/logo.png" alt="Fortunet Logo" class="brand-img">
+                    <div class="brand-text">
+                        <span class="brand-name">FORTUNET</span>
+                        <span class="brand-sub">SOLUSI INDONESIA</span>
+                    </div>
+                </a>
+                <p class="footer-description">
+                    Focus on development and application of information technology, especially on Intelligence Information Technology &amp; Intelligence Equipment in Indonesia.
+                </p>
+                <div class="footer-motto-line">LEAVE IT TO US — TRUST IN TECHNOLOGY</div>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-col">
+                    <h5 class="footer-heading">Navigation</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="product.html">Product</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 class="footer-heading">Solutions</h5>
+                    <ul class="footer-links">
+                        <li><a href="solutions.html#tscm">Cyber Security &amp; TSCM</a></li>
+                        <li><a href="solutions.html#antidrone">Anti-Drone Systems</a></li>
+                        <li><a href="solutions.html#it-infra">Enterprise IT &amp; Servers</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <div class="intek-container">
+                <p>© 2026 PT. Fortunet Solusi Indonesia. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/6281234567890" target="_blank" class="floating-wa-btn" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
