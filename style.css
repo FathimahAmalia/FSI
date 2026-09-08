@@ -14,10 +14,10 @@
     --intek-border: #222222;
     --intek-divider-line: #2c2c2c;
 
-    /* Intek Accent Color: Vibrant Blue/Cyan */
-    --intek-accent: #e60000;
-    --intek-accent-hover: #ff1a1a;
-    --intek-accent-glow: rgba(230, 0, 0, 0.35);
+    /* Fortunet Accent Color: Vibrant Blue/Cyan */
+    --intek-accent: #00a8ff;
+    --intek-accent-hover: #35caff;
+    --intek-accent-glow: rgba(0, 168, 255, 0.35);
 
     /* Text Colors */
     --intek-white: #ffffff;
@@ -25,7 +25,7 @@
     --intek-text-dim: #888888;
 
     /* Fonts */
-    --font-heading: 'Orbitron', 'Chakra Petch', sans-serif;
+    --font-heading: 'Chakra Petch', sans-serif;
     --font-sub: 'Chakra Petch', sans-serif;
     --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
 
@@ -173,9 +173,9 @@ ul {
     background-color: transparent;
     border-bottom: none;
     z-index: 100;
-    animation: fadeInUp 0.6s var(--ease-out-expo) both;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    animation: fadeInUp 0.45s ease both;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     transition: height 0.35s var(--ease-out-quart),
                 background-color 0.35s ease,
                 box-shadow 0.35s ease;
@@ -270,7 +270,7 @@ ul {
 }
 
 .nav-item.active a::after {
-    background-color: var(--intek-white);
+    background-color: var(--intek-accent);
     transform: scaleX(1);
     transform-origin: left;
 }
@@ -291,7 +291,7 @@ ul {
     align-items: center;
     justify-content: center;
     max-width: 900px;
-    margin: 40px auto;
+    margin: 34px auto;
     padding: 0 20px;
 }
 
@@ -328,8 +328,8 @@ ul {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 12px 32px;
-    border-radius: 9999px;
+    padding: 12px 24px;
+    border-radius: 4px;
     background-color: var(--intek-accent);
     color: var(--intek-white);
     font-family: var(--font-sub);
@@ -343,7 +343,7 @@ ul {
 .intek-button:hover {
     background-color: var(--intek-accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--intek-accent-glow);
+    box-shadow: 0 6px 16px rgba(0, 168, 255, .22);
 }
 
 .btn-outline {
@@ -367,8 +367,9 @@ ul {
    ========================================================================== */
 
 .intek-hero {
-    padding: 140px 0 100px;
-    background: radial-gradient(circle at center right, rgba(80, 20, 20, 0.4) 0%, rgba(0,0,0,0.9) 70%), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    min-height: 420px;
+    padding: 112px 0 72px;
+    background: linear-gradient(90deg, rgba(2, 7, 13, 0.98), rgba(3, 24, 40, 0.94) 48%, rgba(2, 7, 13, 0.98));
     position: relative;
     border-bottom: 1px solid var(--intek-border);
 }
@@ -382,7 +383,7 @@ ul {
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(28px, 3.6vw, 44px);
+    font-size: clamp(28px, 3vw, 38px);
     font-weight: 800;
     line-height: 1.2;
     color: var(--intek-white);
@@ -396,7 +397,8 @@ ul {
 }
 
 .hero-paragraphs p {
-    font-size: 15px;
+    max-width: 650px;
+    font-size: 12px;
     color: var(--intek-text);
     line-height: 1.8;
     margin-bottom: 16px;
@@ -414,18 +416,17 @@ ul {
 }
 
 .hero-logogram {
-    width: 180px;
-    height: 180px;
+    width: 125px;
+    height: 125px;
     object-fit: contain;
-    animation: float 5s ease-in-out infinite,
-               pulseGlow 5s ease-in-out infinite;
+    animation: float 7s ease-in-out infinite;
     transition: transform 0.5s ease;
 }
 
 .hero-logogram-wrap:hover .hero-logogram {
     animation-play-state: paused;
     transform: scale(1.08) rotate(-3deg);
-    filter: drop-shadow(0 16px 60px rgba(0, 168, 255, 0.7));
+    filter: drop-shadow(0 10px 28px rgba(0, 168, 255, 0.35));
 }
 
 
@@ -1099,6 +1100,32 @@ ul {
         grid-template-columns: 1fr;
     }
 
+    .intek-section .timeline-item {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 22px !important;
+        padding: 22px !important;
+    }
+
+    .intek-section .timeline-item > div[style*="left:50%"] {
+        display: none !important;
+    }
+
+    .intek-section .timeline-item > div[style*="text-align:right"] {
+        padding: 0 !important;
+        text-align: left !important;
+    }
+
+    .intek-section .timeline-item > div[style*="padding-left:40px"] {
+        padding: 0 !important;
+    }
+
+    .intek-section .timeline-item img {
+        width: 100% !important;
+        max-width: 360px;
+        height: 190px !important;
+    }
+
     .timeline-item.reverse {
         direction: ltr;
     }
@@ -1125,6 +1152,48 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .intek-container {
+        width: calc(100% - 32px);
+    }
+
+    .intek-header {
+        height: 72px;
+    }
+
+    .hero-title {
+        font-size: clamp(30px, 9vw, 42px);
+        line-height: 1.08;
+    }
+
+    .intek-hero {
+        min-height: auto;
+        padding: 110px 0 58px;
+    }
+
+    .hero-paragraphs p {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .hero-right-col {
+        display: none;
+    }
+
+    .intek-nav-list {
+        top: 72px;
+        padding: 14px 16px 18px;
+    }
+
+    .intek-button {
+        min-height: 44px;
+        padding: 11px 18px;
+        font-size: 13px;
+    }
+
+    .intek-divider {
+        margin: 26px auto;
+    }
+
     .mobile-toggle {
         display: block;
     }
@@ -1166,5 +1235,17 @@ ul {
 
     .form-field-row {
         grid-template-columns: 1fr;
+    }
+
+    .intek-timeline {
+        gap: 20px;
+    }
+
+    .timeline-heading {
+        font-size: 20px;
+    }
+
+    .timeline-text {
+        font-size: 14px;
     }
 }

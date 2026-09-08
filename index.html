@@ -94,7 +94,8 @@
         </nav>
 
 
-        <button class="mobile-toggle"
+        <button type="button"
+            class="mobile-toggle"
                 id="menuToggle"
                 aria-label="Toggle Navigation">
 
@@ -138,33 +139,24 @@
 
                 <p>
 
-                    is a company that focus on development and
-                    application of information technology, especially on
+                    We make your business focus on the development
+                    and application of information technology,
+                    especially on
 
                     <strong>
                         Intelligence Information Technology &
-                        Intelligence Equipment
-                    </strong>,
-
-                    Counter Surveillance (TSCM), and tactical airspace
-                    defense systems. Since our establishment, we have
-                    carried out extensive research and technological
-                    developments in collaboration with institutional
-                    partners, creating specialized solutions tailored
-                    to Indonesian strategic conditions.
+                        Intelligence Equipment.
+                    </strong>
 
                 </p>
 
 
                 <p>
 
-                    Indonesia has social, political, and cultural
-                    diversity, and has many border and critical
-                    infrastructure areas. We exist to support and
-                    provide solutions to the implementation of
-                    intelligence operation tasks, executive privacy
-                    protection, and corporate resilience in maintaining
-                    stability and security in Indonesia.
+                    Protect your privacy with our services through
+                    integrated counter-surveillance and sterilization
+                    solutions for residences, business premises,
+                    vehicles, communication devices, laptops, and PCs.
 
                 </p>
 
@@ -619,7 +611,7 @@
                     ">
 
                         <img
-                            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80"
+                            src="assets/pdf-extracted/pdf-4-74.png"
                             alt="Cyber Security"
                             style="
                                 width:250px;
@@ -758,7 +750,7 @@
                     ">
 
                         <img
-                            src="https://images.unsplash.com/photo-1595867160751-2eb26fc26305?auto=format&fit=crop&w=400&q=80"
+                            src="assets/pdf-extracted/pdf-4-78.png"
                             alt="Military"
                             style="
                                 width:250px;
@@ -809,7 +801,7 @@
                     ">
 
                         <img
-                            src="https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&fit=crop&w=400&q=80"
+                            src="assets/pdf-extracted/pdf-4-76.png"
                             alt="Telecommunication"
                             style="
                                 width:250px;
@@ -940,8 +932,8 @@
             border-radius:15px;
 
             box-shadow:
-                0 0 15px rgba(0,168,255,.4),
-                inset 0 0 15px rgba(0,168,255,.4);
+                0 8px 24px rgba(0,0,0,.28),
+                inset 0 0 10px rgba(0,168,255,.12);
 
             background-color:
                 rgba(0,10,20,.6);
@@ -985,7 +977,7 @@
             border:2px solid #00a8ff;
 
             box-shadow:
-                0 0 8px rgba(0,168,255,.5);
+                0 0 5px rgba(0,168,255,.3);
 
         }
 
@@ -1023,8 +1015,8 @@
                 scale(1.03);
 
             box-shadow:
-                0 0 25px rgba(0,168,255,.8),
-                inset 0 0 25px rgba(0,168,255,.6);
+                0 12px 28px rgba(0,0,0,.35),
+                inset 0 0 18px rgba(0,168,255,.25);
 
             border-color:#33ccff;
 
@@ -1035,21 +1027,35 @@
 
             position:relative;
 
-            margin-bottom:20px;
+            width:96px;
+
+            height:96px;
+
+            display:flex;
+
+            align-items:center;
+
+            justify-content:center;
+
+            margin-bottom:14px;
 
         }
 
 
         .neon-icon {
 
-            font-size:55px;
+            width:62px;
+
+            height:62px;
+
+            display:block;
 
             color:#00a8ff;
 
             filter:
                 drop-shadow(
-                    0 0 10px
-                    rgba(0,168,255,.9)
+                    0 0 6px
+                    rgba(0,168,255,.5)
                 );
 
         }
@@ -1068,15 +1074,60 @@
             transform:
                 translate(-50%,-50%);
 
-            width:90px;
+            width:88px;
 
-            height:90px;
+            height:88px;
 
             border:
-                1px dashed
+                1px solid
                 rgba(0,168,255,.5);
 
             border-radius:50%;
+
+        }
+
+
+        .neon-icon-wrap::after {
+
+            content:'';
+
+            position:absolute;
+
+            top:50%;
+
+            left:50%;
+
+            width:108px;
+
+            height:1px;
+
+            background:rgba(0,168,255,.45);
+
+            transform:translate(-50%,-50%);
+
+            box-shadow:0 0 8px rgba(0,168,255,.35);
+
+        }
+
+
+        .neon-icon-wrap .neon-icon {
+
+            position:relative;
+
+            z-index:1;
+
+        }
+
+
+        .product-icon-sprite {
+
+            position:absolute;
+
+            width:0;
+
+            height:0;
+
+            overflow:hidden;
 
         }
 
@@ -1102,15 +1153,56 @@
         </style>
 
 
+        <svg class="product-icon-sprite" aria-hidden="true">
+            <defs>
+                <symbol id="camera" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><path d="M50 8v84M8 50h84" opacity=".8"/><path d="M32 39h36l7 8v19H25V47l7-8Z"/><circle cx="50" cy="56" r="10"/><path d="M39 39l4-7h14l4 7"/>
+                    </g>
+                </symbol>
+                <symbol id="drone" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M50 37v35M27 42h46M34 51h32l-6 17H40l-6-17Z"/><path d="M22 31c-7 0-12 4-12 9s5 7 12 7 12-2 12-7-5-9-12-9ZM78 31c7 0 12 4 12 9s-5 7-12 7-12-2-12-7 5-9 12-9Z"/><path d="M50 37c-5-6-9-10-15-10M50 37c5-6 9-10 15-10"/><circle cx="50" cy="80" r="5"/>
+                    </g>
+                </symbol>
+                <symbol id="jammer" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M28 25v52M43 17v60M58 10v67M73 25v52M21 77h59"/><path d="M24 87h52M29 77l-5 10M71 77l5 10"/><circle cx="28" cy="20" r="3"/><circle cx="43" cy="12" r="3"/><circle cx="58" cy="5" r="3"/><circle cx="73" cy="20" r="3"/><path d="M35 42h31M35 55h31"/>
+                    </g>
+                </symbol>
+                <symbol id="wireless" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 42c15-15 41-15 56 0M31 52c10-10 28-10 38 0M41 62c5-5 13-5 18 0"/><circle cx="50" cy="72" r="3" fill="currentColor"/><path d="M12 82c12-7 24-7 36 0s24 7 40 0"/>
+                    </g>
+                </symbol>
+                <symbol id="anti-drone" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><path d="M50 10v80M10 50h80" opacity=".8"/><path d="M50 30v30M31 39h38M36 54h28l-5 13H41l-5-13Z"/><path d="M21 21l58 58"/>
+                    </g>
+                </symbol>
+                <symbol id="cctv" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 44h48l12 12-8 11H30l-12-12 5-11Z"/><circle cx="68" cy="55" r="7"/><path d="M37 67l-7 20h12l7-20M65 67l8 20h-12l-8-20"/><path d="M25 44l8-15h21l10 15"/>
+                    </g>
+                </symbol>
+                <symbol id="mass-report" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><path d="M50 10v80M10 50h80" opacity=".8"/><circle cx="50" cy="38" r="8"/><path d="M36 61c4-10 24-10 28 0v14H36V61Z"/><circle cx="25" cy="31" r="6"/><circle cx="75" cy="31" r="6"/><path d="M16 53c3-7 14-7 18 0M66 53c4-7 15-7 18 0"/>
+                    </g>
+                </symbol>
+            </defs>
+        </svg>
+
+
 
         <div class="intek-product-flex">
 
 
-            <a href="#" class="neon-square-card">
+            <a href="product-camera.html" class="neon-square-card">
 
                 <div class="neon-icon-wrap">
 
-                    <i class="fa-solid fa-camera neon-icon"></i>
+                    <svg class="neon-icon" aria-hidden="true"><use href="#camera"></use></svg>
 
                 </div>
 
@@ -1126,11 +1218,11 @@
 
 
 
-            <a href="#" class="neon-square-card">
+            <a href="product-drone.html" class="neon-square-card">
 
                 <div class="neon-icon-wrap">
 
-                    <i class="fa-solid fa-crosshairs neon-icon"></i>
+                    <svg class="neon-icon" aria-hidden="true"><use href="#drone"></use></svg>
 
                 </div>
 
@@ -1146,11 +1238,11 @@
 
 
 
-            <a href="#" class="neon-square-card">
+            <a href="product-jammer.html" class="neon-square-card">
 
                 <div class="neon-icon-wrap">
 
-                    <i class="fa-solid fa-tower-broadcast neon-icon"></i>
+                    <svg class="neon-icon" aria-hidden="true"><use href="#jammer"></use></svg>
 
                 </div>
 
@@ -1166,11 +1258,11 @@
 
 
 
-            <a href="#" class="neon-square-card">
+            <a href="product-wireless.html" class="neon-square-card">
 
                 <div class="neon-icon-wrap">
 
-                    <i class="fa-solid fa-wifi neon-icon"></i>
+                    <svg class="neon-icon" aria-hidden="true"><use href="#wireless"></use></svg>
 
                 </div>
 
@@ -1186,11 +1278,11 @@
 
 
 
-            <a href="#" class="neon-square-card">
+            <a href="product-anti-drone.html" class="neon-square-card">
 
                 <div class="neon-icon-wrap">
 
-                    <i class="fa-solid fa-shield-halved neon-icon"></i>
+                    <svg class="neon-icon" aria-hidden="true"><use href="#anti-drone"></use></svg>
 
                 </div>
 
@@ -1206,11 +1298,11 @@
 
 
 
-            <a href="#" class="neon-square-card">
+            <a href="product-cctv.html" class="neon-square-card">
 
                 <div class="neon-icon-wrap">
 
-                    <i class="fa-solid fa-video neon-icon"></i>
+                    <svg class="neon-icon" aria-hidden="true"><use href="#cctv"></use></svg>
 
                 </div>
 
@@ -1226,11 +1318,11 @@
 
 
 
-            <a href="#" class="neon-square-card">
+            <a href="product-mass-report.html" class="neon-square-card">
 
                 <div class="neon-icon-wrap">
 
-                    <i class="fa-solid fa-users-viewfinder neon-icon"></i>
+                    <svg class="neon-icon" aria-hidden="true"><use href="#mass-report"></use></svg>
 
                 </div>
 
@@ -1280,19 +1372,19 @@
         <div class="featured-products-grid">
 
 
-            <a href="#" class="featured-product-card">
+            <a href="product-anti-drone.html" class="featured-product-card">
 
                 <img
-                    src="assets/images/featured/intelligence-media-analytic.jpg"
-                    alt="Intelligence Media Analytic">
+                    src="assets/pdf-extracted/pdf-4-78.png"
+                    alt="Anti Drone Static">
 
                 <div class="featured-blue-overlay"></div>
 
                 <div class="featured-product-title">
 
-                    Intelligence
+                    ANTI DRONE
                     <br>
-                    Media Analytic
+                    STATIC
 
                 </div>
 
@@ -1300,19 +1392,19 @@
 
 
 
-            <a href="#" class="featured-product-card">
+            <a href="product-drone.html" class="featured-product-card">
 
                 <img
-                    src="assets/images/featured/intelligence-admiralty-system.jpg"
-                    alt="Intelligence Admiralty System">
+                    src="assets/pdf-extracted/pdf-4-75.png"
+                    alt="Drone Hunter">
 
                 <div class="featured-blue-overlay"></div>
 
                 <div class="featured-product-title">
 
-                    Intelligence
+                    DRONE
                     <br>
-                    Admiralty System
+                    HUNTER
 
                 </div>
 
@@ -1320,19 +1412,19 @@
 
 
 
-            <a href="#" class="featured-product-card">
+            <a href="product-wireless.html" class="featured-product-card">
 
                 <img
-                    src="assets/images/featured/intelligence-socio-analytic.jpg"
-                    alt="Intelligence Socio Analytic">
+                    src="assets/pdf-extracted/pdf-4-77.png"
+                    alt="Wireless Eavesdropping">
 
                 <div class="featured-blue-overlay"></div>
 
                 <div class="featured-product-title">
 
-                    Intelligence
+                    WIRELESS
                     <br>
-                    Socio Analytic
+                    EAVESDROPPING
 
                 </div>
 
@@ -1340,19 +1432,19 @@
 
 
 
-            <a href="#" class="featured-product-card">
+            <a href="product-camera.html" class="featured-product-card">
 
                 <img
-                    src="assets/images/featured/anti-surveillance.jpg"
-                    alt="Anti Surveillance">
+                    src="assets/pdf-extracted/pdf-4-74.png"
+                    alt="RF and Camera Detector">
 
                 <div class="featured-blue-overlay"></div>
 
                 <div class="featured-product-title">
 
-                    ANTI
+                    RF &amp; CAMERA
                     <br>
-                    SURVEILLANCE
+                    DETECTOR
 
                 </div>
 
@@ -1360,17 +1452,19 @@
 
 
 
-            <a href="#" class="featured-product-card">
+            <a href="product-jammer.html" class="featured-product-card">
 
                 <img
-                    src="assets/images/featured/surveillance.jpg"
-                    alt="Surveillance">
+                    src="assets/pdf-extracted/pdf-4-76.png"
+                    alt="Jammer Whitelist and Blacklist">
 
                 <div class="featured-blue-overlay"></div>
 
                 <div class="featured-product-title">
 
-                    SURVEILLANCE
+                    JAMMER WHITELIST
+                    <br>
+                    &amp; BLACKLIST
 
                 </div>
 
@@ -1378,17 +1472,17 @@
 
 
 
-            <a href="#" class="featured-product-card">
+            <a href="featured-peer-to-peer.html" class="featured-product-card">
 
                 <img
-                    src="assets/images/featured/peer-to-peer-blaster.jpg"
-                    alt="Peer To Peer Blaster">
+                    src="assets/pdf-extracted/pdf-4-76.png"
+                    alt="WBS Blaster">
 
                 <div class="featured-blue-overlay"></div>
 
                 <div class="featured-product-title">
 
-                    PEER-TO-PEER
+                    WBS
                     <br>
                     BLASTER
 
@@ -1420,11 +1514,7 @@
     padding:0 0 70px;
 
     background:
-        radial-gradient(
-            circle at 50% 15%,
-            rgba(0,168,255,.18),
-            transparent 45%
-        ),
+        linear-gradient(rgba(0,8,16,.72), rgba(0,8,16,.86)),
         linear-gradient(
             180deg,
             #031421 0%,
@@ -1783,6 +1873,48 @@
 
         bottom:15px;
 
+    }
+
+}
+
+
+@media(max-width:700px) {
+
+    .intek-product-flex {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:12px;
+        width:100%;
+    }
+
+    .neon-square-card {
+        width:auto;
+        height:auto;
+        min-height:175px;
+        padding:18px 10px;
+    }
+
+    .neon-icon-wrap {
+        transform:scale(.82);
+        margin-bottom:4px;
+    }
+
+    .neon-text {
+        font-size:11px;
+        letter-spacing:.5px;
+    }
+
+}
+
+
+@media(max-width:420px) {
+
+    .intek-product-flex {
+        grid-template-columns:1fr;
+    }
+
+    .neon-square-card {
+        min-height:150px;
     }
 
 }
@@ -4001,6 +4133,8 @@
 
 
 </main>
+
+<script src="script.js"></script>
 
 
 </body>

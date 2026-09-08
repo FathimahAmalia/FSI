@@ -46,7 +46,7 @@
 
             --border: rgba(0,168,255,.18);
 
-            --tech: 'Orbitron', sans-serif;
+            --tech: 'Chakra Petch', sans-serif;
             --ui: 'Chakra Petch', sans-serif;
             --body: 'Roboto', sans-serif;
         }
@@ -68,18 +68,7 @@
 
         body {
 
-            background:
-                radial-gradient(
-                    circle at 15% 10%,
-                    rgba(0,168,255,.10),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 85% 55%,
-                    rgba(0,174,255,.06),
-                    transparent 35%
-                ),
-                var(--black);
+            background: var(--black);
 
             color: var(--white);
 
@@ -102,15 +91,8 @@
             pointer-events: none;
 
             background-image:
-                linear-gradient(
-                    rgba(0,168,255,.025) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(0,168,255,.025) 1px,
-                    transparent 1px
-                );
+                linear-gradient(rgba(90,150,180,.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(90,150,180,.035) 1px, transparent 1px);
 
             background-size: 50px 50px;
         }
@@ -346,6 +328,12 @@
             cursor: pointer;
 
             font-size: 18px;
+
+            position: relative;
+
+            z-index: 1001;
+
+            pointer-events: auto;
         }
 
 
@@ -1080,7 +1068,7 @@
                 1px solid
                 rgba(0,168,255,.15);
 
-            border-radius: 18px;
+            border-radius: 8px;
 
             background:
                 linear-gradient(
@@ -1268,7 +1256,7 @@
                 1px solid
                 rgba(0,168,255,.15);
 
-            border-radius: 15px;
+            border-radius: 8px;
 
             background:
                 linear-gradient(
@@ -1380,6 +1368,52 @@
         }
 
 
+        .mission-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 11px;
+        }
+
+
+        .mission-item {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 9px;
+
+            color: #8299ad;
+
+            font-family: var(--ui);
+
+            font-size: 12px;
+
+            line-height: 1.55;
+        }
+
+
+        .mission-icon {
+
+            flex: 0 0 11px;
+
+            width: 11px;
+
+            height: 11px;
+
+            margin-top: 4px;
+
+            background: var(--blue);
+
+            box-shadow:
+                0 0 8px
+                rgba(0,168,255,.45);
+        }
+
+
         /* =====================================================
            EXPERTISE
         ===================================================== */
@@ -1407,7 +1441,7 @@
                 1px solid
                 rgba(0,168,255,.14);
 
-            border-radius: 14px;
+            border-radius: 8px;
 
             background:
                 linear-gradient(
@@ -2112,7 +2146,8 @@
             }
 
 
-            .intek-nav.open {
+            .intek-nav.open,
+            .intek-nav.mobile-open {
 
                 display: block;
             }
@@ -2156,6 +2191,31 @@
             .hero-content {
 
                 padding: 50px 0;
+            }
+
+
+            .hero-description {
+
+                max-width: 100%;
+
+                line-height: 1.7;
+            }
+
+
+            .overview-content,
+            .vision-card,
+            .expertise-card,
+            .commitment-card {
+
+                min-width: 0;
+
+                overflow-wrap: anywhere;
+            }
+
+
+            .mission-item {
+
+                font-size: 11px;
             }
 
 
@@ -2421,7 +2481,8 @@
         </nav>
 
 
-        <button class="mobile-toggle"
+        <button type="button"
+            class="mobile-toggle"
                 id="menuToggle"
                 aria-label="Toggle Navigation">
 
@@ -2689,24 +2750,21 @@
 
                 <p class="overview-text">
 
-                    PT Fortunet Solusi Indonesia is an
-                    Indonesian technology company providing
-                    integrated solutions for organizations,
-                    institutions, and business environments
-                    that require reliable technology and
-                    enhanced security.
+                    We make your business focus on the
+                    development and application of information
+                    technology, especially on Intelligence
+                    Information Technology and Intelligence
+                    Equipment.
 
                 </p>
 
 
                 <p class="overview-text">
 
-                    Our capabilities combine information
-                    technology, intelligence equipment,
-                    cybersecurity, counter-surveillance
-                    technology, and tactical security systems
-                    into practical solutions tailored to
-                    operational requirements.
+                    Our solutions are designed to protect your
+                    privacy through integrated counter-surveillance
+                    and sterilization services for residences,
+                    business premises, and vehicles.
 
                 </p>
 
@@ -2717,10 +2775,11 @@
                         Our approach is simple:
                     </strong>
 
-                    understand the operational challenge,
-                    identify the right technology, deploy it
-                    precisely, and provide continuous support
-                    throughout its lifecycle.
+                        our team combines specialized training,
+                        technical surveillance countermeasures,
+                        comprehensive inspection, preventive measures,
+                        and security analysis to protect personal data
+                        and confidential information.
 
                 </div>
 
@@ -2793,52 +2852,69 @@
 
                 <p class="card-text">
 
-                    To become a trusted Indonesian technology
-                    partner in the field of information
-                    technology, intelligence systems, and
-                    integrated security solutions through
-                    innovation, professionalism, and
-                    continuous development.
-
+                    To become an IT solution company that is
+                    consistent in producing or providing IT products
+                    and services, so that they are integrated,
+                    synergistic, professional, and sustainable so as
+                    to satisfy customers.
+                   
                 </p>
 
             </div>
 
+<!-- MISSION -->
 
-            <!-- MISSION -->
+<div class="vision-card reveal">
 
-            <div class="vision-card reveal">
+    <div class="card-icon">
 
-                <div class="card-icon">
+        <i class="fa-solid fa-crosshairs"></i>
 
-                    <i class="fa-solid fa-crosshairs"></i>
+    </div>
 
-                </div>
+    <h3 class="card-title">
 
+        Our Mission
 
-                <h3 class="card-title">
+    </h3>
 
-                    Our Mission
+    <div class="mission-list">
 
-                </h3>
+        <div class="mission-item">
+            <span class="mission-icon"></span>
+            <span>
+                Make it easier for customers to get computer equipment and spare parts
+            </span>
+        </div>
 
+        <div class="mission-item">
+            <span class="mission-icon"></span>
+            <span>
+                Prioritize service, professionalism, and teamwork in producing quality services
+            </span>
+        </div>
 
-                <p class="card-text">
+        <div class="mission-item">
+            <span class="mission-icon"></span>
+            <span>
+                Develop mutually beneficial business cooperation and partnerships
+            </span>
+        </div>
 
-                    Deliver reliable technology solutions,
-                    provide responsive technical support,
-                    maintain strict confidentiality, and
-                    develop long-term partnerships through
-                    precision, integrity, and professional
-                    service.
-
-                </p>
-
-            </div>
-
+        <div class="mission-item">
+            <span class="mission-icon"></span>
+            <span>
+                Develop the best and latest technological innovations in each product
+            </span>
         </div>
 
     </div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -3438,42 +3514,41 @@ const mainNav =
     document.getElementById("mainNav");
 
 
-menuToggle.addEventListener(
-    "click",
-    function () {
+if (menuToggle && mainNav) {
 
-        mainNav.classList.toggle("open");
+    menuToggle.addEventListener(
+        "click",
+        function () {
 
-        const icon =
-            menuToggle.querySelector("i");
+            mainNav.classList.toggle("open");
 
-
-        if (
-            mainNav.classList.contains("open")
-        ) {
-
-            icon.classList.remove(
-                "fa-bars"
+            menuToggle.setAttribute(
+                "aria-expanded",
+                mainNav.classList.contains("open") ? "true" : "false"
             );
 
-            icon.classList.add(
-                "fa-xmark"
-            );
+            const icon =
+                menuToggle.querySelector("i");
 
-        } else {
 
-            icon.classList.remove(
-                "fa-xmark"
-            );
+            if (icon) {
 
-            icon.classList.add(
-                "fa-bars"
-            );
+                icon.classList.toggle(
+                    "fa-xmark",
+                    mainNav.classList.contains("open")
+                );
+
+                icon.classList.toggle(
+                    "fa-bars",
+                    !mainNav.classList.contains("open")
+                );
+
+            }
 
         }
+    );
 
-    }
-);
+}
 
 
 /* =====================================================

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="camera" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="50" cy="50" r="36"/><path d="M50 8v84M8 50h84" opacity=".8"/><path d="M32 39h36l7 8v19H25V47l7-8Z"/><circle cx="50" cy="56" r="10"/><path d="M39 39l4-7h14l4 7"/>
+    </g>
+  </symbol>
+  <symbol id="drone" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 37v35M27 42h46M34 51h32l-6 17H40l-6-17Z"/><path d="M22 31c-7 0-12 4-12 9s5 7 12 7 12-2 12-7-5-9-12-9ZM78 31c7 0 12 4 12 9s-5 7-12 7-12-2-12-7 5-9 12-9Z"/><path d="M50 37c-5-6-9-10-15-10M50 37c5-6 9-10 15-10"/><circle cx="50" cy="80" r="5"/>
+    </g>
+  </symbol>
+  <symbol id="jammer" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M28 25v52M43 17v60M58 10v67M73 25v52M21 77h59"/><path d="M24 87h52M29 77l-5 10M71 77l5 10"/><path d="M43 26h15M58 18h15"/><circle cx="28" cy="20" r="3"/><circle cx="43" cy="12" r="3"/><circle cx="58" cy="5" r="3"/><circle cx="73" cy="20" r="3"/><path d="M35 42h31M35 55h31"/>
+    </g>
+  </symbol>
+  <symbol id="wireless" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 42c15-15 41-15 56 0M31 52c10-10 28-10 38 0M41 62c5-5 13-5 18 0"/><circle cx="50" cy="72" r="3" fill="currentColor"/><path d="M12 82c12-7 24-7 36 0s24 7 40 0"/><path d="M50 65v-8"/>
+    </g>
+  </symbol>
+  <symbol id="anti-drone" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="50" cy="50" r="36"/><path d="M50 10v80M10 50h80" opacity=".8"/><path d="M50 30v30M31 39h38M36 54h28l-5 13H41l-5-13Z"/><path d="M21 21l58 58"/>
+    </g>
+  </symbol>
+  <symbol id="cctv" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M23 44h48l12 12-8 11H30l-12-12 5-11Z"/><circle cx="68" cy="55" r="7"/><path d="M37 67l-7 20h12l7-20M65 67l8 20h-12l-8-20"/><path d="M25 44l8-15h21l10 15"/>
+    </g>
+  </symbol>
+  <symbol id="mass-report" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="50" cy="50" r="36"/><path d="M50 10v80M10 50h80" opacity=".8"/><circle cx="50" cy="38" r="8"/><path d="M36 61c4-10 24-10 28 0v14H36V61Z"/><circle cx="25" cy="31" r="6"/><circle cx="75" cy="31" r="6"/><path d="M16 53c3-7 14-7 18 0M66 53c4-7 15-7 18 0"/>
+    </g>
+  </symbol>
+</svg>

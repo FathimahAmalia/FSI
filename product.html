@@ -797,8 +797,7 @@
         .intek-featured-matrix {
             display: grid;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+            grid-template-columns: 1fr;
 
             gap: 22px;
         }
@@ -806,7 +805,7 @@
         .product-banner-card {
             position: relative;
 
-            min-height: 390px;
+            min-height: 250px;
 
             border:
                 1px solid rgba(0, 168, 255, .18);
@@ -841,6 +840,14 @@
                 0 0 35px rgba(0, 168, 255, .1);
         }
 
+            .product-banner-card.requested-product {
+                border-color: var(--cyan);
+
+                box-shadow:
+                0 0 0 1px rgba(0, 234, 255, .25),
+                0 0 35px rgba(0, 168, 255, .28);
+            }
+
         .product-banner-card::before {
             content: "";
 
@@ -866,8 +873,9 @@
         .product-banner-inner {
             height: 100%;
 
-            display: flex;
-            flex-direction: column;
+            display: grid;
+
+            grid-template-columns: 150px 230px 1fr;
 
             padding: 0;
         }
@@ -875,7 +883,7 @@
         .product-visual-box {
             position: relative;
 
-            height: 215px;
+            min-height: 250px;
 
             display: flex;
             align-items: center;
@@ -891,7 +899,47 @@
                 );
 
             border-bottom:
+                none;
+
+            border-right:
                 1px solid rgba(0, 168, 255, .12);
+        }
+
+
+        .product-image-box {
+            min-height: 250px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px;
+
+            background: rgba(0, 5, 12, .72);
+
+            border-right:
+                1px solid rgba(0, 168, 255, .12);
+        }
+
+
+        .product-image {
+            width: 145px;
+            height: 225px;
+
+            object-fit: cover;
+
+            border: 1px solid rgba(0, 168, 255, .38);
+
+            box-shadow: 0 0 20px rgba(0, 168, 255, .2);
+
+            transition: transform .35s ease, box-shadow .35s ease;
+        }
+
+
+        .product-banner-card:hover .product-image {
+            transform: scale(1.04);
+
+            box-shadow: 0 0 30px rgba(0, 168, 255, .45);
         }
 
         .product-visual-box::before {
@@ -995,7 +1043,11 @@
         }
 
         .product-info {
-            padding: 24px 23px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 28px 30px;
         }
 
         .product-category {
@@ -1594,8 +1646,7 @@
             }
 
             .intek-featured-matrix {
-                grid-template-columns:
-                    repeat(2, 1fr);
+                grid-template-columns: 1fr;
             }
 
             .hero-container {
@@ -1674,6 +1725,19 @@
                 grid-template-columns: 1fr;
             }
 
+            .product-banner-inner {
+                grid-template-columns: 120px 180px 1fr;
+            }
+
+            .product-image-box {
+                min-height: 220px;
+            }
+
+            .product-image {
+                width: 125px;
+                height: 195px;
+            }
+
             .footer-inner {
                 grid-template-columns: 1fr;
 
@@ -1737,7 +1801,23 @@
             }
 
             .product-visual-box {
-                height: 190px;
+                min-height: 190px;
+            }
+
+            .product-banner-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .product-visual-box,
+            .product-image-box {
+                min-height: 180px;
+                border-right: none;
+                border-bottom: 1px solid rgba(0, 168, 255, .12);
+            }
+
+            .product-image {
+                width: 120px;
+                height: 180px;
             }
 
             .product-info {
@@ -2228,6 +2308,8 @@
 
                  data-name="Camera Detector Pro"
 
+                 data-product-key="camera"
+
                  data-code="FSI-CD-01"
 
                  data-badge="TSCM STANDARD"
@@ -2252,6 +2334,10 @@
 
                         <i class="fa-solid fa-camera"></i>
 
+                    </div>
+
+                    <div class="product-image-box">
+                        <img class="product-image" src="assets/pdf-extracted/pdf-4-74.png" alt="Camera Detector product">
                     </div>
 
 
@@ -2288,6 +2374,8 @@
 
                  data-name="Drone Hunter Tactical Scanner"
 
+                 data-product-key="drone"
+
                  data-code="FSI-DH-02"
 
                  data-badge="ANTI-UAV DEFENSE"
@@ -2312,6 +2400,10 @@
 
                         <i class="fa-solid fa-crosshairs"></i>
 
+                    </div>
+
+                    <div class="product-image-box">
+                        <img class="product-image" src="assets/pdf-extracted/pdf-4-75.png" alt="Drone Hunter product">
                     </div>
 
 
@@ -2348,6 +2440,8 @@
 
                  data-name="Anti-Drone Tactical System"
 
+                 data-product-key="anti-drone"
+
                  data-code="FSI-ADJ-03"
 
                  data-badge="PERIMETER DEFENSE"
@@ -2372,6 +2466,10 @@
 
                         <i class="fa-solid fa-shield-halved"></i>
 
+                    </div>
+
+                    <div class="product-image-box">
+                        <img class="product-image" src="assets/pdf-extracted/pdf-4-78.png" alt="Anti Drone product">
                     </div>
 
 
@@ -2408,6 +2506,8 @@
 
                  data-name="Multi-Band Signal Security System"
 
+                 data-product-key="jammer"
+
                  data-code="FSI-JM-04"
 
                  data-badge="PRIVACY GUARD"
@@ -2432,6 +2532,10 @@
 
                         <i class="fa-solid fa-tower-broadcast"></i>
 
+                    </div>
+
+                    <div class="product-image-box">
+                        <img class="product-image" src="assets/pdf-extracted/pdf-4-76.png" alt="Jammer Blacklist product">
                     </div>
 
 
@@ -2468,6 +2572,8 @@
 
                  data-name="Wireless Eavesdropping Detector"
 
+                 data-product-key="wireless"
+
                  data-code="FSI-TSCM-05"
 
                  data-badge="TSCM SWEEPER"
@@ -2492,6 +2598,10 @@
 
                         <i class="fa-solid fa-ear-listen"></i>
 
+                    </div>
+
+                    <div class="product-image-box">
+                        <img class="product-image" src="assets/pdf-extracted/pdf-4-77.png" alt="Wireless Eavesdropping product">
                     </div>
 
 
@@ -2528,6 +2638,8 @@
 
                  data-name="AI Face Recognition Engine"
 
+                 data-product-key="mass-report"
+
                  data-code="FSI-BL-06"
 
                  data-badge="AI ANALYTICS"
@@ -2552,6 +2664,10 @@
 
                         <i class="fa-solid fa-user-shield"></i>
 
+                    </div>
+
+                    <div class="product-image-box">
+                        <img class="product-image" src="assets/pdf-extracted/pdf-4-80.png" alt="Mass Report product">
                     </div>
 
 
@@ -3024,6 +3140,32 @@
             });
 
         });
+
+
+    const requestedProduct =
+        new URLSearchParams(window.location.search).get("product");
+
+
+    if (requestedProduct) {
+
+        const requestedCard =
+            document.querySelector(
+                `[data-product-key="${requestedProduct}"]`
+            );
+
+
+        if (requestedCard) {
+
+            requestedCard.classList.add("requested-product");
+
+            requestedCard.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }
+
+    }
 
 
     /* =========================================================
