@@ -113,98 +113,6 @@
 
 
 <!-- =========================================================
-     HERO SECTION
-========================================================= -->
-
-<section class="intek-hero">
-
-    <div class="intek-container hero-container">
-
-
-        <!-- LEFT -->
-
-        <div class="hero-left-col">
-
-            <h1 class="hero-title"
-                style="color:#ffffff;text-transform:uppercase;">
-
-                PT FORTUNET SOLUSI
-                <br>
-                INDONESIA
-
-            </h1>
-
-
-            <div class="hero-paragraphs">
-
-                <p>
-
-                    We make your business focus on the development
-                    and application of information technology,
-                    especially on
-
-                    <strong>
-                        Intelligence Information Technology &
-                        Intelligence Equipment.
-                    </strong>
-
-                </p>
-
-
-                <p>
-
-                    Protect your privacy with our services through
-                    integrated counter-surveillance and sterilization
-                    solutions for residences, business premises,
-                    vehicles, communication devices, laptops, and PCs.
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- RIGHT -->
-
-        <div class="hero-right-col">
-
-            <div class="hero-logogram-wrap">
-
-                <img src="assets/logo.png"
-                     alt="Fortunet Emblem Logogram"
-                     class="hero-logogram">
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     DIVIDER
-========================================================= -->
-
-<div class="intek-divider">
-
-    <span class="d-line"></span>
-
-    <span class="d-icon">
-        <i class="fas fa-minus"></i>
-    </span>
-
-    <span class="d-line"></span>
-
-</div>
-
-
-
-<!-- =========================================================
      WHY FORTUNET
 ========================================================= -->
 
@@ -542,317 +450,304 @@
 
 
 <!-- =========================================================
-     FIELD OF EXPERTISE
+     FIELD OF EXPERTISE (CLEAN CYBER TIMELINE)
 ========================================================= -->
+<section class="intek-section expertise-timeline-section" id="expertise">
 
-<section class="intek-section"
-         id="expertise"
-         style="
-            background-color:#02050f;
-            position:relative;
-            z-index:1;
-         ">
+    <style>
+        .expertise-timeline-section {
+            background-color: #020712;
+            position: relative;
+            z-index: 1;
+            padding: 85px 0 90px;
+            border-top: 1px solid rgba(0, 168, 255, 0.12);
+            border-bottom: 1px solid rgba(0, 168, 255, 0.12);
+        }
 
+        .expertise-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .expertise-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 16px;
+            border-radius: 20px;
+            background: rgba(0, 234, 255, 0.08);
+            border: 1px solid rgba(0, 234, 255, 0.3);
+            color: #00eaff;
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .expertise-main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(28px, 3.2vw, 38px);
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .expertise-main-title span {
+            color: #00eaff;
+            text-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+        }
+
+        .expertise-timeline-wrap {
+            position: relative;
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        /* Central Timeline Track */
+        .expertise-timeline-wrap::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 25px;
+            bottom: 25px;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(0, 234, 255, 0.1) 0%, rgba(0, 234, 255, 0.6) 20%, rgba(0, 168, 255, 0.6) 80%, rgba(0, 234, 255, 0.1) 100%);
+            transform: translateX(-50%);
+            box-shadow: 0 0 12px rgba(0, 234, 255, 0.4);
+            z-index: 1;
+        }
+
+        .expertise-card-row {
+            display: grid;
+            grid-template-columns: 1fr 60px 1fr;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(8, 18, 32, 0.9) 0%, rgba(4, 9, 20, 0.98) 100%);
+            border: 1px solid rgba(0, 168, 255, 0.22);
+            border-radius: 16px;
+            padding: 24px 32px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(0, 168, 255, 0.05);
+            transition: all 0.35s ease;
+        }
+
+        .expertise-card-row:hover {
+            border-color: rgba(0, 234, 255, 0.55);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 234, 255, 0.22);
+        }
+
+        .expertise-visual-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .expertise-visual-wrap.align-left {
+            justify-content: flex-start;
+        }
+
+        .expertise-visual-wrap.align-right {
+            justify-content: flex-end;
+        }
+
+        .expertise-cyber-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #00a8ff;
+            border-radius: 10px;
+            padding: 8px;
+            background: rgba(0, 20, 40, 0.65);
+            box-shadow: 0 0 18px rgba(0, 168, 255, 0.35);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            max-width: 230px;
+        }
+
+        .expertise-cyber-box:hover {
+            border-color: #00eaff;
+            box-shadow: 0 0 25px rgba(0, 234, 255, 0.55);
+        }
+
+        .expertise-cyber-box img {
+            width: 100%;
+            height: auto;
+            max-height: 125px;
+            object-fit: contain;
+            display: block;
+            border-radius: 6px;
+        }
+
+        .expertise-node {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .node-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 2px solid #00eaff;
+            box-shadow: 0 0 14px #ffffff, 0 0 24px #00eaff;
+            z-index: 3;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-card-row:hover .node-dot {
+            transform: scale(1.35);
+            box-shadow: 0 0 18px #ffffff, 0 0 30px #00eaff;
+        }
+
+        .expertise-info-wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .expertise-info-wrap.text-left {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .expertise-info-wrap.text-right {
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        .expertise-title-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(20px, 2.2vw, 26px);
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            line-height: 1.25;
+        }
+
+        .expertise-subtitle {
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 13px;
+            color: #8ba2b8;
+            letter-spacing: 1px;
+            margin-top: 6px;
+            text-transform: uppercase;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .expertise-timeline-wrap::before {
+                left: 24px;
+            }
+
+            .expertise-card-row {
+                grid-template-columns: 40px 1fr;
+                gap: 20px;
+                padding: 20px 18px;
+            }
+
+            .expertise-node {
+                grid-column: 1;
+                grid-row: 1 / span 2;
+                justify-content: flex-start;
+            }
+
+            .expertise-visual-wrap.align-left,
+            .expertise-visual-wrap.align-right {
+                grid-column: 2;
+                grid-row: 1;
+                justify-content: flex-start;
+            }
+
+            .expertise-info-wrap.text-left,
+            .expertise-info-wrap.text-right {
+                grid-column: 2;
+                grid-row: 2;
+                text-align: left;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .expertise-cyber-box {
+                max-width: 180px;
+            }
+        }
+    </style>
 
     <div class="intek-container">
 
-
-        <div class="section-heading">
-
-            <h2 class="intek-heading-title"
-                style="
-                    color:#ffffff;
-                    text-shadow:
-                    0 0 10px rgba(0,168,255,.5);
-                ">
-
-                Field of
-
-                <span style="color:#00a8ff;">
-                    Expertise
-                </span>
-
+        <!-- Header -->
+        <div class="expertise-header">
+            <div class="expertise-tag">
+                <i class="fa-solid fa-crosshairs"></i> Core Specialization
+            </div>
+            <h2 class="expertise-main-title">
+                Field of <span>Expertise</span>
             </h2>
-
         </div>
 
+        <!-- 3-Item Timeline Showcase -->
+        <div class="expertise-timeline-wrap">
 
-
-        <div class="intek-timeline"
-             style="margin-top:50px;">
-
-
-            <!-- =================================================
-                 CYBER SECURITY
-            ================================================== -->
-
-            <div class="timeline-item"
-                 style="
-                    display:flex;
-                    align-items:center;
-                    margin-bottom:50px;
-                    position:relative;
-                 ">
-
-
-                <div style="
-                    flex:1;
-                    text-align:right;
-                    padding-right:40px;
-                ">
-
-                    <div style="
-                        display:inline-block;
-                        border:2px solid #00a8ff;
-                        padding:5px;
-                        border-radius:8px;
-                        box-shadow:
-                        0 0 15px rgba(0,168,255,.4);
-                    ">
-
-                        <img
-                            src="assets/pdf-extracted/pdf-4-74.png"
-                            alt="Cyber Security"
-                            style="
-                                width:250px;
-                                height:150px;
-                                object-fit:cover;
-                                border-radius:4px;
-                                filter:
-                                brightness(.7)
-                                sepia(1)
-                                hue-rotate(180deg)
-                                saturate(3);
-                            ">
-
+            <!-- Item 1: CYBER SECURITY -->
+            <div class="expertise-card-row" data-aos="fade-up" data-aos-duration="800">
+                <div class="expertise-visual-wrap align-right">
+                    <div class="expertise-cyber-box">
+                        <img src="assets/expertise-cyber-security.png" alt="Cyber Security Specialized HUD">
                     </div>
-
                 </div>
-
-
-                <div style="
-                    width:2px;
-                    background:#00a8ff;
-                    height:200px;
-                    position:absolute;
-                    left:50%;
-                    top:-25px;
-                    transform:translateX(-50%);
-                    box-shadow:0 0 10px #00a8ff;
-                "></div>
-
-
-                <div style="
-                    position:absolute;
-                    left:50%;
-                    transform:translate(-50%,0);
-                    width:12px;
-                    height:12px;
-                    background:#fff;
-                    border-radius:50%;
-                    box-shadow:0 0 10px #fff;
-                    z-index:2;
-                "></div>
-
-
-                <div style="
-                    flex:1;
-                    padding-left:40px;
-                ">
-
-                    <h3 style="
-                        color:#fff;
-                        font-family:'Orbitron',sans-serif;
-                        font-size:20px;
-                        margin:0;
-                    ">
-
-                        Cyber Security
-
-                    </h3>
-
+                <div class="expertise-node">
+                    <div class="node-dot"></div>
                 </div>
-
+                <div class="expertise-info-wrap text-left">
+                    <h3 class="expertise-title-text">Cyber Security</h3>
+                    <div class="expertise-subtitle">Threat Detection &amp; Counter-Surveillance</div>
+                </div>
             </div>
 
-
-
-            <!-- =================================================
-                 MILITARY
-            ================================================== -->
-
-            <div class="timeline-item"
-                 style="
-                    display:flex;
-                    align-items:center;
-                    margin-bottom:50px;
-                    position:relative;
-                 ">
-
-
-                <div style="
-                    flex:1;
-                    text-align:right;
-                    padding-right:40px;
-                ">
-
-                    <h3 style="
-                        color:#fff;
-                        font-family:'Orbitron',sans-serif;
-                        font-size:20px;
-                        margin:0;
-                    ">
-
-                        Military
-
-                    </h3>
-
+            <!-- Item 2: MILITARY -->
+            <div class="expertise-card-row" data-aos="fade-up" data-aos-duration="800">
+                <div class="expertise-info-wrap text-right">
+                    <h3 class="expertise-title-text">Military</h3>
+                    <div class="expertise-subtitle">Tactical Defense &amp; Operational Security</div>
                 </div>
-
-
-                <div style="
-                    width:2px;
-                    background:#00a8ff;
-                    height:200px;
-                    position:absolute;
-                    left:50%;
-                    top:-25px;
-                    transform:translateX(-50%);
-                    box-shadow:0 0 10px #00a8ff;
-                "></div>
-
-
-                <div style="
-                    position:absolute;
-                    left:50%;
-                    transform:translate(-50%,0);
-                    width:12px;
-                    height:12px;
-                    background:#fff;
-                    border-radius:50%;
-                    box-shadow:0 0 10px #fff;
-                    z-index:2;
-                "></div>
-
-
-                <div style="
-                    flex:1;
-                    padding-left:40px;
-                ">
-
-                    <div style="
-                        display:inline-block;
-                        border:2px solid #00a8ff;
-                        padding:5px;
-                        border-radius:8px;
-                        box-shadow:
-                        0 0 15px rgba(0,168,255,.4);
-                    ">
-
-                        <img
-                            src="assets/pdf-extracted/pdf-4-78.png"
-                            alt="Military"
-                            style="
-                                width:250px;
-                                height:150px;
-                                object-fit:cover;
-                                border-radius:4px;
-                                filter:
-                                brightness(.7)
-                                sepia(1)
-                                hue-rotate(180deg)
-                                saturate(3);
-                            ">
-
+                <div class="expertise-node">
+                    <div class="node-dot"></div>
+                </div>
+                <div class="expertise-visual-wrap align-left">
+                    <div class="expertise-cyber-box">
+                        <img src="assets/expertise-military.png" alt="Military Defense Specialized HUD">
                     </div>
-
                 </div>
-
             </div>
 
-
-
-            <!-- =================================================
-                 TELECOMMUNICATION
-            ================================================== -->
-
-            <div class="timeline-item"
-                 style="
-                    display:flex;
-                    align-items:center;
-                    margin-bottom:50px;
-                    position:relative;
-                 ">
-
-
-                <div style="
-                    flex:1;
-                    text-align:right;
-                    padding-right:40px;
-                ">
-
-                    <div style="
-                        display:inline-block;
-                        border:2px solid #00a8ff;
-                        padding:5px;
-                        border-radius:8px;
-                        box-shadow:
-                        0 0 15px rgba(0,168,255,.4);
-                    ">
-
-                        <img
-                            src="assets/pdf-extracted/pdf-4-76.png"
-                            alt="Telecommunication"
-                            style="
-                                width:250px;
-                                height:150px;
-                                object-fit:cover;
-                                border-radius:4px;
-                                filter:
-                                brightness(.7)
-                                sepia(1)
-                                hue-rotate(180deg)
-                                saturate(3);
-                            ">
-
+            <!-- Item 3: TELECOMMUNICATION -->
+            <div class="expertise-card-row" data-aos="fade-up" data-aos-duration="800">
+                <div class="expertise-visual-wrap align-right">
+                    <div class="expertise-cyber-box">
+                        <img src="assets/expertise-telecom.png" alt="Telecommunication Specialized HUD">
                     </div>
-
                 </div>
-
-
-                <div style="
-                    position:absolute;
-                    left:50%;
-                    transform:translate(-50%,0);
-                    width:12px;
-                    height:12px;
-                    background:#fff;
-                    border-radius:50%;
-                    box-shadow:0 0 10px #fff;
-                    z-index:2;
-                "></div>
-
-
-                <div style="
-                    flex:1;
-                    padding-left:40px;
-                ">
-
-                    <h3 style="
-                        color:#fff;
-                        font-family:'Orbitron',sans-serif;
-                        font-size:20px;
-                        margin:0;
-                    ">
-
-                        Telecommunication
-
-                    </h3>
-
+                <div class="expertise-node">
+                    <div class="node-dot"></div>
                 </div>
-
+                <div class="expertise-info-wrap text-left">
+                    <h3 class="expertise-title-text">Telecommunication</h3>
+                    <div class="expertise-subtitle">RF Transmission &amp; Signal Management</div>
+                </div>
             </div>
-
 
         </div>
 
@@ -916,8 +811,41 @@
 
             max-width:1000px;
 
-            margin:0 auto 40px auto;
+            margin:0 auto 30px auto;
 
+        }
+
+        .product-readmore-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px auto 40px auto;
+        }
+
+        .product-readmore-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 38px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #00c8ff 0%, #0077ff 100%);
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 8px 24px rgba(0, 168, 255, 0.35);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .product-readmore-btn:hover {
+            background: linear-gradient(135deg, #00eaff 0%, #0096c7 100%);
+            color: #030e18;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 35px rgba(0, 234, 255, 0.6);
         }
 
 
@@ -1337,6 +1265,14 @@
             </a>
 
 
+        </div>
+
+        <!-- READ MORE BUTTON -> COUNTER SURVEILLANCE -->
+        <div class="product-readmore-wrap">
+            <a href="counter-surveillance.html" class="product-readmore-btn">
+                <span>Read More</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
         </div>
 
     </div>
@@ -1869,7 +1805,73 @@
 
 }
 
+    /* Partners & Support */
+    .partners-support-section {
+        padding: 70px 0 60px;
+        background-color: #000000;
+        position: relative;
+        border-top: 1px solid rgba(0, 168, 255, 0.15);
+    }
+
+    .partners-graphic-box {
+        max-width: 1080px;
+        margin: 0 auto;
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 22px rgba(0, 168, 255, 0.25));
+        transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .partners-graphic-box:hover {
+        transform: translateY(-4px);
+        filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 30px rgba(0, 234, 255, 0.4));
+    }
+
+    .partners-graphic-box img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+    }
+
 </style>
+
+
+
+<!-- =========================================================
+     OUR PARTNERS & SUPPORT
+========================================================= -->
+<section class="partners-support-section" id="partners">
+
+    <div style="
+        background-color: rgba(0, 168, 255, 0.2);
+        padding: 15px 0;
+        text-align: center;
+        margin-bottom: 45px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    ">
+        <h2 style="
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        ">
+            Our Partners &amp; Support
+        </h2>
+    </div>
+
+    <div class="intek-container">
+        <div class="partners-graphic-box">
+            <img src="assets/partners-support.png" alt="Our Strategic Partners & Support Clients - PT Fortunet Solusi Indonesia">
+        </div>
+    </div>
+
+</section>
 
 
 
@@ -1888,360 +1890,43 @@
 
 
 
-    <div class="intek-container footer-main">
-
+    <div class="intek-container footer-centered-wrap">
 
         <!-- BRAND -->
+        <div class="footer-left">
 
-        <div class="footer-brand-column">
-
-
-            <a href="index.html"
-               class="footer-brand">
-
-
+            <a href="index.html" class="footer-brand">
                 <div class="footer-logo-wrapper">
-
-                    <img
-                        src="assets/logo.png"
-                        alt="Fortunet Solusi Indonesia"
-                        class="footer-logo-img">
-
+                    <img src="assets/logo.png" alt="Fortunet Solusi Indonesia" class="footer-logo-img">
                 </div>
-
-
                 <div class="footer-brand-text">
-
-                    <span class="footer-brand-name">
-                        FORTUNET
-                    </span>
-
-                    <span class="footer-brand-sub">
-                        SOLUSI INDONESIA
-                    </span>
-
+                    <span class="footer-brand-name">FORTUNET</span>
+                    <span class="footer-brand-sub">SOLUSI INDONESIA</span>
                 </div>
-
             </a>
 
-
-
             <p class="footer-description">
-
-                Focus on development and application of information
-                technology, especially in Intelligence Information
-                Technology &amp; Intelligence Equipment in Indonesia.
-
+                Focus on development and application of information technology, especially in Intelligence Information Technology &amp; Intelligence Equipment in Indonesia.
             </p>
 
-
-
-            <div class="footer-motto">
-
-                <span class="motto-line"></span>
-
-                <span>
-
-                    LEAVE IT TO US
-
-                    <strong>—</strong>
-
-                    TRUST IN TECHNOLOGY
-
-                </span>
-
-                <span class="motto-line"></span>
-
+            <div class="footer-motto-line">
+                LEAVE IT TO US — TRUST IN TECHNOLOGY
             </div>
 
-
-
-            <div class="footer-contact-mini">
-
-
-                <a href="tel:+622138711261">
-
-                    <span class="footer-contact-icon">
-
-                        <i class="fa-solid fa-phone"></i>
-
-                    </span>
-
-
-                    <span>
-
-                        <small>
-                            Office Phone
-                        </small>
-
-                        (+62 21) 3871-1261
-
-                    </span>
-
+            <div class="footer-contact-row">
+                <a href="tel:+622138711261" class="footer-contact-chip">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(+62 21) 3871-1261</span>
                 </a>
-
-
-
-                <a href="mailto:info@fortunetindonesia.com">
-
-                    <span class="footer-contact-icon">
-
-                        <i class="fa-solid fa-envelope"></i>
-
-                    </span>
-
-
-                    <span>
-
-                        <small>
-                            Official Email
-                        </small>
-
-                        info@fortunetindonesia.com
-
-                    </span>
-
+                <a href="mailto:info@fortunetindonesia.com" class="footer-contact-chip">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>info@fortunetindonesia.com</span>
                 </a>
-
-
-            </div>
-
-        </div>
-
-
-
-        <!-- NAVIGATION -->
-
-        <div class="footer-navigation">
-
-
-            <div class="footer-column">
-
-
-                <h5 class="footer-heading">
-
-                    <span class="footer-heading-line"></span>
-
-                    Navigation
-
-                </h5>
-
-
-                <ul class="footer-links">
-
-
-                    <li>
-                        <a href="index.html">
-
-                            <i class="fa-solid fa-chevron-right"></i>
-
-                            Home
-
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="about.html">
-
-                            <i class="fa-solid fa-chevron-right"></i>
-
-                            About Us
-
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="product.html">
-
-                            <i class="fa-solid fa-chevron-right"></i>
-
-                            Products
-
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="solutions.html">
-
-                            <i class="fa-solid fa-chevron-right"></i>
-
-                            Solutions
-
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="contact.html">
-
-                            <i class="fa-solid fa-chevron-right"></i>
-
-                            Contact
-
-                        </a>
-                    </li>
-
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- SOLUTIONS -->
-
-            <div class="footer-column">
-
-
-                <h5 class="footer-heading">
-
-                    <span class="footer-heading-line"></span>
-
-                    Solutions
-
-                </h5>
-
-
-                <ul class="footer-links">
-
-
-                    <li>
-
-                        <a href="solutions.html#tscm">
-
-                            <i class="fa-solid fa-chevron-right"></i>
-
-                            Cyber Security &amp; TSCM
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="solutions.html#antidrone">
-
-                            <i class="fa-solid fa-chevron-right"></i>
-
-                            Anti-Drone Systems
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="solutions.html#it-infra">
-
-                            <i class="fa-solid fa-chevron-right"></i>
-
-                            Enterprise IT &amp; Servers
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="#">
-
-                            <i class="fa-solid fa-chevron-right"></i>
-
-                            AI Face Recognition
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="#">
-
-                            <i class="fa-solid fa-chevron-right"></i>
-
-                            Security Intelligence
-
-                        </a>
-
-                    </li>
-
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- CTA -->
-
-            <div class="footer-column footer-cta-column">
-
-
-                <h5 class="footer-heading">
-
-                    <span class="footer-heading-line"></span>
-
-                    Need Assistance?
-
-                </h5>
-
-
-                <p class="footer-cta-text">
-
-                    Discuss your security, intelligence,
-                    surveillance, or IT infrastructure requirements
-                    with our team.
-
-                </p>
-
-
-                <a href="#contact"
-                   class="footer-cta-button">
-
-                    <span>
-                        Request Consultation
-                    </span>
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
+                <a href="https://wa.me/6281234567890" target="_blank" class="footer-contact-chip">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp 24/7 Hotline</span>
                 </a>
-
-
-
-                <a href="https://wa.me/6281234567890"
-                   target="_blank"
-                   class="footer-whatsapp">
-
-
-                    <span class="footer-whatsapp-icon">
-
-                        <i class="fa-brands fa-whatsapp"></i>
-
-                    </span>
-
-
-                    <span>
-
-                        <small>
-                            WhatsApp 24/7 Hotline
-                        </small>
-
-                        +62 812-3456-7890
-
-                    </span>
-
-
-                </a>
-
             </div>
-
 
         </div>
 
@@ -2335,7 +2020,7 @@
 
     width:100%;
 
-    padding:90px 0 80px;
+    padding:130px 0 80px;
 
     background:
         radial-gradient(
@@ -3033,7 +2718,7 @@
     .forte-section {
 
         padding:
-            65px 0 60px;
+            105px 0 60px;
 
     }
 
@@ -3246,10 +2931,10 @@
     display:grid;
 
     grid-template-columns:
-        minmax(300px,1.3fr)
-        minmax(500px,2fr);
+        minmax(280px, 1.2fr)
+        minmax(280px, 1fr);
 
-    gap:80px;
+    gap:60px;
 
     padding-top:75px;
 
@@ -3491,14 +3176,7 @@
 
 .footer-navigation {
 
-    display:grid;
-
-    grid-template-columns:
-        1fr
-        1fr
-        1.25fr;
-
-    gap:40px;
+    display:block;
 
 }
 
@@ -3969,15 +3647,7 @@
 
         grid-template-columns:1fr;
 
-        gap:50px;
-
-    }
-
-
-    .footer-navigation {
-
-        grid-template-columns:
-            repeat(3,1fr);
+        gap:45px;
 
     }
 
@@ -3990,25 +3660,7 @@
 
         padding-top:50px;
 
-        gap:40px;
-
-    }
-
-
-    .footer-navigation {
-
-        grid-template-columns:
-            1fr 1fr;
-
-        gap:35px 25px;
-
-    }
-
-
-    .footer-cta-column {
-
-        grid-column:
-            1 / -1;
+        gap:35px;
 
     }
 
@@ -4046,12 +3698,6 @@
 
 
 @media(max-width:480px) {
-
-    .footer-navigation {
-
-        grid-template-columns:1fr;
-
-    }
 
 
     .footer-motto {

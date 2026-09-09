@@ -3,17 +3,514 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sosial Media Analytics Center — PT Fortunet Solusi Indonesia</title>
-    <meta name="description" content="Sosial Media Analytics Center from PT Fortunet Solusi Indonesia for monitoring, analysis, and intelligence support across digital platforms.">
+    <title>Social Media Analytics Center — PT Fortunet Solusi Indonesia</title>
+    <meta name="description" content="Social Media Analytics Center Software by PT Fortunet Solusi Indonesia - Advanced Campaign Flow, Mass Report, Engagement Booster, and Analytical Dashboard.">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Orbitron:wght@600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="intek-body">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================================================
+           SMAC CUSTOM PAGE STYLES (Futuristic Cyber Defense)
+        ========================================================= */
+        :root {
+            --bg-dark: #040913;
+            --cyan: #00eaff;
+            --cyan-glow: rgba(0, 234, 255, 0.4);
+            --blue: #00a8ff;
+            --purple: #7928ca;
+            --border-cyan: #00c8ff;
+            --border-subtle: rgba(0, 200, 255, 0.2);
+            --text-main: #ffffff;
+            --text-muted: #94a9be;
+        }
+
+        .smac-body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Cyber Background */
+        .smac-body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 80% 15%, rgba(0, 168, 255, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 15% 65%, rgba(0, 234, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(4, 12, 24, 0.95) 0%, #03070e 100%);
+            z-index: -3;
+        }
+
+        /* Tech Circular HUD */
+        .smac-body::after {
+            content: "";
+            position: fixed;
+            width: 1000px;
+            height: 1000px;
+            right: -250px;
+            top: 15%;
+            background:
+                radial-gradient(circle, transparent 62%, rgba(0, 200, 255, 0.04) 63%, transparent 64%),
+                radial-gradient(circle, transparent 78%, rgba(0, 200, 255, 0.03) 79%, transparent 80%),
+                radial-gradient(circle, transparent 90%, rgba(0, 200, 255, 0.02) 91%, transparent 92%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        /* Main Wrapper */
+        .smac-wrapper {
+            width: min(1280px, calc(100% - 48px));
+            margin: 0 auto;
+            padding-top: 130px;
+            padding-bottom: 90px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section */
+        .smac-hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .smac-monitor-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 30px rgba(0, 200, 255, 0.3));
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .smac-monitor-wrap:hover {
+            transform: translateY(-4px) scale(1.01);
+            filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 40px rgba(0, 234, 255, 0.55));
+        }
+
+        .smac-monitor-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .smac-hero-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .badge-pill-cyan {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            align-self: flex-start;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1.5px solid var(--cyan);
+            background: rgba(0, 234, 255, 0.08);
+            color: var(--cyan);
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .smac-main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(26px, 2.8vw, 40px);
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .smac-main-title .highlight-blue {
+            color: var(--cyan);
+            text-shadow: 0 0 20px rgba(0, 234, 255, 0.4);
+        }
+
+        .smac-info-card {
+            background: linear-gradient(135deg, rgba(8, 22, 38, 0.85) 0%, rgba(4, 12, 22, 0.95) 100%);
+            border: 1px solid rgba(0, 200, 255, 0.25);
+            border-left: 3px solid var(--cyan);
+            border-radius: 10px;
+            padding: 20px 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .smac-info-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--cyan);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .smac-info-card p {
+            font-size: 13.5px;
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .smac-pills-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 5px;
+        }
+
+        .smac-feature-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            background: rgba(0, 168, 255, 0.1);
+            border: 1px solid rgba(0, 200, 255, 0.35);
+            color: #ffffff;
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .smac-feature-pill:hover {
+            background: rgba(0, 234, 255, 0.2);
+            border-color: var(--cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(0, 234, 255, 0.3);
+        }
+
+        .smac-feature-pill i {
+            color: var(--cyan);
+            font-size: 14px;
+        }
+
+        /* 5 Thumbnails Grid */
+        .smac-section-title-wrap {
+            text-align: center;
+            margin: 60px 0 35px;
+        }
+
+        .smac-section-tag {
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--cyan);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .smac-section-heading {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(22px, 2.2vw, 32px);
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .smac-thumbs-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+            margin-bottom: 70px;
+        }
+
+        .smac-thumb-card {
+            background: rgba(6, 18, 32, 0.85);
+            border: 1px solid rgba(0, 200, 255, 0.25);
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .smac-thumb-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--cyan);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 234, 255, 0.35);
+        }
+
+        .smac-thumb-img-wrap {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 12px;
+            background: #02060c;
+        }
+
+        .smac-thumb-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .smac-thumb-card:hover .smac-thumb-img-wrap img {
+            transform: scale(1.04);
+        }
+
+        .smac-thumb-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: #ffffff;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+
+        /* 3 Operational Rows */
+        .smac-modules-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .smac-module-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+            align-items: center;
+            gap: 44px;
+            padding: 30px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(7, 20, 36, 0.75) 0%, rgba(3, 10, 20, 0.9) 100%);
+            border: 1px solid rgba(0, 200, 255, 0.22);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .smac-module-row:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 234, 255, 0.5);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 234, 255, 0.2);
+        }
+
+        .smac-module-media {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 15px rgba(0, 200, 255, 0.25));
+        }
+
+        .smac-module-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .smac-module-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .smac-module-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            align-self: flex-start;
+            padding: 5px 14px;
+            border-radius: 16px;
+            border: 1px solid var(--cyan);
+            background: rgba(0, 234, 255, 0.08);
+            color: var(--cyan);
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .smac-module-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(20px, 2.2vw, 28px);
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-transform: uppercase;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+
+        .smac-module-desc {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .smac-module-row.reverse-layout {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+        }
+
+        .smac-module-row.reverse-layout .smac-module-media {
+            order: 2;
+        }
+
+        .smac-module-row.reverse-layout .smac-module-info {
+            order: 1;
+        }
+
+        /* Bottom CTA Banner */
+        .bottom-cta-banner {
+            margin-top: 70px;
+            padding: 38px 44px;
+            border-radius: 16px;
+            background:
+                linear-gradient(135deg, rgba(0, 168, 255, 0.15) 0%, rgba(121, 40, 202, 0.12) 100%),
+                rgba(8, 18, 32, 0.95);
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .cta-content h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .cta-content p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .cta-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #00c8ff 0%, #0077ff 100%);
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 24px rgba(0, 168, 255, 0.35);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+
+        .cta-action-btn:hover {
+            background: linear-gradient(135deg, #00eaff 0%, #0096c7 100%);
+            color: #030e18;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 234, 255, 0.55);
+        }
+
+        /* Responsive */
+        @media (max-width: 1080px) {
+            .smac-thumbs-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 960px) {
+            .smac-wrapper {
+                padding-top: 110px;
+            }
+
+            .smac-hero,
+            .smac-module-row,
+            .smac-module-row.reverse-layout {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .smac-module-row.reverse-layout .smac-module-media {
+                order: 1;
+            }
+
+            .smac-module-row.reverse-layout .smac-module-info {
+                order: 2;
+            }
+
+            .bottom-cta-banner {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 28px 24px;
+            }
+
+            .cta-action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .smac-wrapper {
+                width: calc(100% - 32px);
+                padding-top: 95px;
+            }
+
+            .smac-thumbs-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .smac-module-row {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="intek-body product-body">
+
+    <!-- =========================================================
+         STANDARD NAVBAR / HEADER (Matches other pages)
+    ========================================================== -->
     <header class="intek-header">
         <div class="intek-container header-inner">
             <a href="index.html" class="intek-brand-logo">
@@ -26,10 +523,18 @@
 
             <nav class="intek-nav">
                 <ul class="intek-nav-list" id="navMenu">
-                    <li class="nav-item"><a href="index.html">Home</a></li>
-                    <li class="nav-item"><a href="about.html">About</a></li>
-                    <li class="nav-item"><a href="product.html">Product</a></li>
-                    <li class="nav-item"><a href="contact.html">Contact</a></li>
+                    <li class="nav-item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="product.html">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html">Contact</a>
+                    </li>
                 </ul>
             </nav>
 
@@ -39,131 +544,169 @@
         </div>
     </header>
 
-    <main>
-        <section class="intek-hero">
-            <div class="intek-container hero-container">
-                <div class="hero-left-col">
-                    <h1 class="hero-title">
-                        SOSIAL MEDIA <br><span class="accent-highlight">ANALYTICS CENTER</span>
-                    </h1>
-                    <div class="hero-paragraphs">
-                        <p>
-                            A dedicated analytics capability for monitoring public conversation, mapping digital risk, and supporting intelligence-informed decisions.
-                        </p>
-                    </div>
+
+    <!-- =========================================================
+         MAIN PRODUCT SHOWCASE: SOCIAL MEDIA ANALYTICS CENTER
+    ========================================================== -->
+    <main class="smac-wrapper">
+
+        <!-- =====================================================
+             SECTION 1: HERO & DASHBOARD ANALYTICAL
+        ====================================================== -->
+        <section class="smac-hero" data-aos="fade-up" data-aos-duration="850">
+            <!-- Left: Hero Monitor Dashboard Display -->
+            <div class="smac-hero-media">
+                <img src="assets/smac-monitor.png" alt="Social Media Analytics Center Dashboard Monitor" class="smac-monitor-img">
+            </div>
+
+            <!-- Right: Overview & Detailed Cards -->
+            <div class="smac-hero-info">
+                <div class="badge-pill">
+                    <i class="fa-solid fa-shield-halved"></i> Software / Digital Intelligence
                 </div>
-                <div class="hero-right-col">
-                    <div class="hero-solution-visual">
-                        <img src="assets/pdf-extracted/pdf-4-79.png" alt="Sosial Media Analytics Center">
-                    </div>
+
+                <h1 class="product-title">
+                    SOCIAL MEDIA <br><span class="highlight-blue">ANALYTICS CENTER</span>
+                </h1>
+
+                <!-- Card 1: Core System -->
+                <div class="smac-info-card">
+                    <h4><i class="fa-solid fa-server"></i> Social Media Analytics Center</h4>
+                    <p>Advanced open-source intelligence and real-time social monitoring platform designed to aggregate, process, and analyze massive volumes of social media conversations, trends, and user behavioral patterns across multiple networks.</p>
+                </div>
+
+                <!-- Card 2: Dashboard Analytical -->
+                <div class="smac-info-card">
+                    <h4><i class="fa-solid fa-chart-line"></i> Dashboard Analytical</h4>
+                    <p>Comprehensive analytical command center delivering real-time metric visualization, automated sentiment tracking, threat identification, and deep conversational insights.</p>
+                </div>
+
+                <!-- Feature Pills -->
+                <div class="smac-pills">
+                    <span class="smac-pill"><i class="fa-solid fa-chart-pie"></i> Analytical Emotion &amp; Gender</span>
+                    <span class="smac-pill"><i class="fa-solid fa-map-location-dot"></i> Analytical Heat Map</span>
+                    <span class="smac-pill"><i class="fa-solid fa-tower-broadcast"></i> Live View Analytical</span>
                 </div>
             </div>
         </section>
 
-        <div class="intek-divider">
-            <span class="d-line"></span>
-            <span class="d-icon"><i class="fas fa-minus"></i></span>
-            <span class="d-line"></span>
-        </div>
-
-        <section class="intek-section">
-            <div class="intek-container">
-                <div class="section-heading">
-                    <h2 class="intek-heading-title">Digital Intelligence <span class="accent-highlight">Support</span></h2>
+        <!-- =====================================================
+             SECTION 2: CORE INTERFACE SUITE (5-COLUMN GRID)
+        ====================================================== -->
+        <section class="smac-thumbs-grid" data-aos="fade-up" data-aos-duration="850">
+            <div class="smac-thumb-card">
+                <div class="smac-thumb-img-wrap">
+                    <img src="assets/smac-thumb-dashboard.png" alt="Dashboard Interface">
                 </div>
+                <div class="smac-thumb-title">Dashboard</div>
+            </div>
 
-                <div class="intek-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-visual">
-                            <img src="assets/pdf-extracted/pdf-4-79.png" alt="Social media analytics" class="timeline-image">
-                        </div>
-                        <div class="timeline-title-wrap">
-                            <h3 class="timeline-heading">From Open Sources to Actionable Insight</h3>
-                            <p class="timeline-text">
-                                The Sosial Media Analytics Center helps organizations understand online narratives, detect emerging issues, and support operational awareness. Analysis is presented in a structured format so security and leadership teams can act with clearer context.
-                            </p>
-                            <p class="timeline-text">
-                                This capability complements physical counter-surveillance and VIP protection by covering the digital layer of reputation, threat indication, and public-information risk.
-                            </p>
-                        </div>
-                    </div>
+            <div class="smac-thumb-card">
+                <div class="smac-thumb-img-wrap">
+                    <img src="assets/smac-thumb-analytical.png" alt="Dashboard Analytical Interface">
                 </div>
+                <div class="smac-thumb-title">Dashboard Analytical</div>
+            </div>
+
+            <div class="smac-thumb-card">
+                <div class="smac-thumb-img-wrap">
+                    <img src="assets/smac-thumb-emotion-gender.png" alt="Analytical Emotion & Gender Interface">
+                </div>
+                <div class="smac-thumb-title">Analytical Emotion &amp; Gender</div>
+            </div>
+
+            <div class="smac-thumb-card">
+                <div class="smac-thumb-img-wrap">
+                    <img src="assets/smac-thumb-heat-map.png" alt="Analytical Heat Map Interface">
+                </div>
+                <div class="smac-thumb-title">Analytical Heat Map</div>
+            </div>
+
+            <div class="smac-thumb-card">
+                <div class="smac-thumb-img-wrap">
+                    <img src="assets/smac-thumb-live-view.png" alt="Live View Analytical Interface">
+                </div>
+                <div class="smac-thumb-title">Live View Analytical</div>
             </div>
         </section>
 
-        <section class="intek-section">
-            <div class="intek-container">
-                <div class="section-heading">
-                    <h2 class="intek-heading-title">Center <span class="accent-highlight">Capabilities</span></h2>
+        <!-- =====================================================
+             SECTION 3: OPERATIONAL MODULES (CAMPAIGN, REPORT, BOOSTER)
+        ====================================================== -->
+        <section class="smac-modules-section">
+            
+            <!-- Module 1: CAMPAIGN FLOW -->
+            <div class="smac-module-row" data-aos="fade-up" data-aos-duration="850">
+                <div class="smac-module-media">
+                    <img src="assets/smac-campaign-flow.png" alt="Campaign Flow Module Interface">
                 </div>
-
-                <div class="intek-category-matrix">
-                    <div class="cat-card">
-                        <div class="cat-icon-frame"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                        <div class="cat-name">Monitoring &amp; Mapping</div>
-                        <p class="cat-desc">Track relevant topics, accounts, and conversation patterns across major social platforms.</p>
+                <div class="smac-module-info">
+                    <div class="smac-module-badge">
+                        <i class="fa-solid fa-bullhorn"></i> Operational Module
                     </div>
-                    <div class="cat-card">
-                        <div class="cat-icon-frame"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                        <div class="cat-name">Risk Indication</div>
-                        <p class="cat-desc">Highlight potential issues, hostile narratives, and early signals that may affect security posture.</p>
-                    </div>
-                    <div class="cat-card">
-                        <div class="cat-icon-frame"><i class="fa-solid fa-file-lines"></i></div>
-                        <div class="cat-name">Reporting Support</div>
-                        <p class="cat-desc">Translate findings into clear reports that support briefing, decision-making, and follow-up action.</p>
-                    </div>
-                </div>
-
-                <div class="intek-btn-center" style="margin-top: 40px;">
-                    <a href="contact.html" class="intek-button">Discuss with Us</a>
+                    <h2 class="smac-module-title">CAMPAIGN FLOW</h2>
+                    <p class="smac-module-desc">
+                        Conduct scheduled mass campaigns with customizable topics. Campaign content is sourced from social media and mainstream media posts based on the selected topic. Additionally, content can also be created manually.
+                    </p>
                 </div>
             </div>
-        </section>
 
-        <div class="intek-divider">
-            <span class="d-line"></span>
-            <span class="d-icon"><i class="fas fa-minus"></i></span>
-            <span class="d-line"></span>
-        </div>
-
-        <section class="intek-section">
-            <div class="intek-container">
-                <div class="section-heading">
-                    <h2 class="intek-heading-title">Related <span class="accent-highlight">Solutions</span></h2>
+            <!-- Module 2: MASS REPORT (Reverse Layout) -->
+            <div class="smac-module-row reverse-layout" data-aos="fade-up" data-aos-duration="850">
+                <div class="smac-module-info">
+                    <div class="smac-module-badge">
+                        <i class="fa-solid fa-flag"></i> Operational Module
+                    </div>
+                    <h2 class="smac-module-title">MASS REPORT</h2>
+                    <p class="smac-module-desc">
+                        In Social Media Analytics Center, users can report abuse against an account. All reports will be targeted to the specified account with the abuse category determined by the user.
+                    </p>
                 </div>
-                <div class="intek-featured-matrix">
-                    <a href="vip-solution.html" class="product-banner-card related-solution-card">
-                        <div class="product-banner-inner">
-                            <div class="product-visual-box">
-                                <i class="fa-solid fa-shield-halved"></i>
-                            </div>
-                            <div class="product-banner-title">VIP Solution</div>
-                        </div>
-                    </a>
-                    <a href="counter-surveillance.html" class="product-banner-card related-solution-card">
-                        <div class="product-banner-inner">
-                            <div class="product-visual-box">
-                                <i class="fa-solid fa-camera"></i>
-                            </div>
-                            <div class="product-banner-title">Counter Surveillance</div>
-                        </div>
-                    </a>
+                <div class="smac-module-media">
+                    <img src="assets/smac-mass-report.png" alt="Mass Report Module Interface">
                 </div>
             </div>
-        </section>
 
-        <section class="intek-banner-area">
-            <div class="intek-container">
-                <div class="banner-content-box">
-                    <h2 class="banner-main-title">Turn social conversation into structured security insight.</h2>
+            <!-- Module 3: BOOSTER -->
+            <div class="smac-module-row" data-aos="fade-up" data-aos-duration="850">
+                <div class="smac-module-media">
+                    <img src="assets/smac-add-booster.png" alt="Booster Module Interface">
+                </div>
+                <div class="smac-module-info">
+                    <div class="smac-module-badge">
+                        <i class="fa-solid fa-bolt"></i> Operational Module
+                    </div>
+                    <h2 class="smac-module-title">BOOSTER</h2>
+                    <p class="smac-module-desc">
+                        Social Media Analytics Center can boost a post using the post's URL. The boosting is done in the form of likes and replies/comments. This boosting is useful so that Social Media Analytics Center interacts with the targeted post, thereby increasing the engagement of the post.
+                    </p>
                 </div>
             </div>
+
         </section>
+
+        <!-- =====================================================
+             CALL TO ACTION BANNER
+        ====================================================== -->
+        <section class="bottom-cta-banner" data-aos="zoom-in" data-aos-duration="800">
+            <div class="cta-content">
+                <h3>Looking for Advanced Social Media Intelligence &amp; Analytics?</h3>
+                <p>Speak with our intelligence software specialists to deploy the Social Media Analytics Center suite for your operations.</p>
+            </div>
+            <a class="cta-action-btn" href="contact.html">
+                <span>Request Consultation</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </section>
+
     </main>
 
+
+    <!-- =========================================================
+         STANDARD FOOTER (Matches other pages)
+    ========================================================== -->
     <footer class="intek-footer">
-        <div class="intek-container footer-inner">
+        <div class="intek-container footer-grid">
             <div class="footer-left">
                 <a href="index.html" class="intek-brand-logo footer-logo">
                     <img src="assets/logo.png" alt="Fortunet Logo" class="brand-img">
@@ -176,25 +719,15 @@
                     Focus on development and application of information technology, especially on Intelligence Information Technology &amp; Intelligence Equipment in Indonesia.
                 </p>
                 <div class="footer-motto-line">LEAVE IT TO US — TRUST IN TECHNOLOGY</div>
-            </div>
-
-            <div class="footer-right">
-                <div class="footer-col">
-                    <h5 class="footer-heading">Navigation</h5>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="product.html">Product</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h5 class="footer-heading">Solutions</h5>
-                    <ul class="footer-links">
-                        <li><a href="vip-solution.html">VIP Solution</a></li>
-                        <li><a href="counter-surveillance.html">Counter Surveillance</a></li>
-                        <li><a href="sosial-media-analytics-center.html">Sosial Media Analytics Center</a></li>
-                    </ul>
+                <div class="footer-contact-row">
+                    <a href="tel:+622138711261" class="footer-contact-chip">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>(+62 21) 3871-1261</span>
+                    </a>
+                    <a href="mailto:info@fortunetindonesia.com" class="footer-contact-chip">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@fortunetindonesia.com</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -206,10 +739,24 @@
         </div>
     </footer>
 
+
+    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/6281234567890" target="_blank" class="floating-wa-btn" aria-label="WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+
+    <!-- Scripts -->
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 850,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 70
+        });
+    </script>
+
 </body>
 </html>

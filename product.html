@@ -3,3267 +3,876 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product &amp; Solution Catalog — PT Fortunet Solusi Indonesia</title>
+    <meta name="description" content="Product catalog for intelligence technology, TSCM, VIP solutions, anti-drone defense, surveillance, and enterprise IT hardware.">
 
-    <title>Product Catalog — PT Fortunet Solusi Indonesia</title>
-
-    <meta name="description"
-          content="Product catalog for intelligence technology, TSCM, security systems, anti-drone, surveillance and enterprise IT solutions.">
-
-    <!-- GOOGLE FONTS -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Orbitron:wght@600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800;900&family=Roboto:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Product Custom Styles -->
     <style>
-
-        /* =========================================================
-           GLOBAL
-        ========================================================= */
-
         :root {
-            --blue: #00a8ff;
-            --blue-light: #33c9ff;
-            --blue-dark: #006eff;
             --cyan: #00eaff;
-
-            --bg: #020810;
-            --bg-soft: #06111d;
-            --card: rgba(5, 18, 31, .78);
-
-            --white: #ffffff;
-            --muted: #8ca3b8;
-
-            --border: rgba(0, 168, 255, .22);
-
-            --shadow:
-                0 0 25px rgba(0, 168, 255, .13);
-
-            --font-tech: 'Orbitron', sans-serif;
-            --font-body: 'Roboto', sans-serif;
-            --font-ui: 'Chakra Petch', sans-serif;
+            --blue: #00a8ff;
+            --blue-dark: #006eff;
+            --navy-deep: #020712;
+            --surface-card: #081220;
+            --surface-hover: #0c1c32;
+            --border-glow: rgba(0, 234, 255, 0.25);
+            --border-subtle: rgba(0, 168, 255, 0.15);
+            --text-main: #e2f1ff;
+            --text-muted: #8ba2b8;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background:
-                radial-gradient(
-                    circle at 15% 10%,
-                    rgba(0, 119, 255, .13),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 85% 45%,
-                    rgba(0, 212, 255, .08),
-                    transparent 30%
-                ),
-                var(--bg);
-
-            color: var(--white);
-            font-family: var(--font-body);
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: -1;
-
-            background-image:
-                linear-gradient(
-                    rgba(0, 168, 255, .035) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(0, 168, 255, .035) 1px,
-                    transparent 1px
-                );
-
-            background-size: 50px 50px;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-        .intek-container {
-            width: min(1180px, calc(100% - 40px));
-            margin: auto;
-        }
-
-
-        /* =========================================================
-           HEADER
-        ========================================================= */
-
-        .intek-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background:
-                rgba(2, 8, 16, .82);
-
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-
-            border-bottom: 1px solid rgba(0, 168, 255, .16);
-        }
-
-        .header-inner {
-            height: 82px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .intek-brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .brand-img {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-
-            filter:
-                drop-shadow(0 0 10px rgba(0, 168, 255, .35));
-        }
-
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .brand-name {
-            font-family: var(--font-tech);
-            font-size: 17px;
-            font-weight: 800;
-            letter-spacing: 2px;
-        }
-
-        .brand-sub {
-            color: var(--blue);
-            font-family: var(--font-ui);
-            font-size: 9px;
-            letter-spacing: 2.5px;
-            margin-top: 2px;
-        }
-
-        .intek-nav-list {
-            display: flex;
-            align-items: center;
-            gap: 38px;
-            list-style: none;
-        }
-
-        .intek-nav-list a {
+        /* Hero */
+        .product-hero-section {
             position: relative;
-
-            color: #9eb2c4;
-
-            font-family: var(--font-ui);
-            font-size: 14px;
-            font-weight: 600;
-
-            letter-spacing: 1px;
-            transition: .3s ease;
-        }
-
-        .intek-nav-list a::after {
-            content: "";
-
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-
-            width: 0;
-            height: 2px;
-
-            background: var(--blue);
-            box-shadow: 0 0 10px var(--blue);
-
-            transition: .3s ease;
-        }
-
-        .intek-nav-list a:hover,
-        .intek-nav-list .active a {
-            color: var(--white);
-        }
-
-        .intek-nav-list a:hover::after,
-        .intek-nav-list .active a::after {
-            width: 100%;
-        }
-
-        .mobile-toggle {
-            display: none;
-
-            background: transparent;
-            border: 1px solid var(--border);
-
-            color: var(--blue);
-
-            width: 42px;
-            height: 42px;
-
-            border-radius: 8px;
-
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-
-        /* =========================================================
-           HERO
-        ========================================================= */
-
-        .intek-hero {
-            position: relative;
-            min-height: 570px;
-
-            display: flex;
-            align-items: center;
-
+            padding: 130px 0 75px;
+            background: radial-gradient(circle at 75% 30%, rgba(0, 168, 255, 0.12) 0%, transparent 60%),
+                        radial-gradient(circle at 20% 80%, rgba(0, 234, 255, 0.06) 0%, transparent 50%),
+                        var(--navy-deep);
+            border-bottom: 1px solid var(--border-subtle);
             overflow: hidden;
-
-            border-bottom: 1px solid rgba(0, 168, 255, .1);
         }
 
-        .intek-hero::before {
-            content: "";
-
-            position: absolute;
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(2, 8, 16, .98) 0%,
-                    rgba(2, 8, 16, .82) 48%,
-                    rgba(2, 8, 16, .35) 100%
-                );
-        }
-
-        .intek-hero::after {
-            content: "";
-
-            position: absolute;
-
-            width: 650px;
-            height: 650px;
-
-            right: -180px;
-            top: -100px;
-
-            border-radius: 50%;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(0, 168, 255, .17),
-                    transparent 65%
-                );
-
-            filter: blur(15px);
-        }
-
-        .hero-container {
-            position: relative;
-            z-index: 2;
-
+        .product-hero-grid {
             display: grid;
-            grid-template-columns: 1.15fr .85fr;
-
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 50px;
             align-items: center;
-
-            min-height: 570px;
-        }
-
-        .hero-left-col {
-            padding: 50px 0;
         }
 
         .hero-eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-
-            color: var(--blue);
-
-            font-family: var(--font-ui);
-            font-size: 12px;
-            font-weight: 700;
-
-            letter-spacing: 3px;
-            text-transform: uppercase;
-
-            margin-bottom: 22px;
-        }
-
-        .hero-eyebrow span {
-            width: 35px;
-            height: 1px;
-            background: var(--blue);
-
-            box-shadow: 0 0 10px var(--blue);
-        }
-
-        .hero-title {
-            font-family: var(--font-tech);
-
-            font-size: clamp(45px, 6vw, 78px);
-
-            line-height: .98;
-
-            font-weight: 900;
-
-            letter-spacing: -2px;
-
-            margin-bottom: 28px;
-        }
-
-        .accent-highlight {
-            color: var(--blue);
-
-            text-shadow:
-                0 0 10px rgba(0, 168, 255, .35),
-                0 0 30px rgba(0, 168, 255, .12);
-        }
-
-        .hero-paragraphs {
-            max-width: 650px;
-        }
-
-        .hero-paragraphs p {
-            color: #91a6b9;
-
-            font-family: var(--font-ui);
-
-            font-size: 16px;
-            line-height: 1.8;
-
-            border-left: 2px solid var(--blue);
-
-            padding-left: 20px;
-        }
-
-        .hero-right-col {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-tech-orbit {
-            position: relative;
-
-            width: 380px;
-            height: 380px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .orbit {
-            position: absolute;
-
-            border: 1px solid rgba(0, 168, 255, .22);
-
-            border-radius: 50%;
-        }
-
-        .orbit-1 {
-            width: 360px;
-            height: 360px;
-
-            animation: rotateOrbit 20s linear infinite;
-        }
-
-        .orbit-2 {
-            width: 285px;
-            height: 285px;
-
-            border-style: dashed;
-
-            animation: rotateOrbitReverse 15s linear infinite;
-        }
-
-        .orbit-3 {
-            width: 210px;
-            height: 210px;
-
-            border-color: rgba(0, 234, 255, .25);
-        }
-
-        .orbit-dot {
-            position: absolute;
-
-            width: 7px;
-            height: 7px;
-
-            background: var(--cyan);
-
-            border-radius: 50%;
-
-            box-shadow:
-                0 0 8px var(--cyan),
-                0 0 20px var(--cyan);
-        }
-
-        .dot-1 {
-            top: 25px;
-            left: 105px;
-        }
-
-        .dot-2 {
-            right: 20px;
-            bottom: 105px;
-        }
-
-        .dot-3 {
-            left: 45px;
-            bottom: 75px;
-        }
-
-        .hero-logogram {
-            position: relative;
-            z-index: 5;
-
-            width: 145px;
-            height: 145px;
-
-            object-fit: contain;
-
-            filter:
-                drop-shadow(0 0 15px rgba(0, 168, 255, .65))
-                drop-shadow(0 0 40px rgba(0, 168, 255, .2));
-
-            animation: logoFloat 4s ease-in-out infinite;
-        }
-
-        @keyframes rotateOrbit {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes rotateOrbitReverse {
-            from {
-                transform: rotate(360deg);
-            }
-
-            to {
-                transform: rotate(0deg);
-            }
-        }
-
-        @keyframes logoFloat {
-            0%,100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-
-        /* =========================================================
-           DIVIDER
-        ========================================================= */
-
-        .intek-divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            gap: 15px;
-
-            width: min(1180px, calc(100% - 40px));
-
-            margin: 0 auto;
-
-            padding: 28px 0;
-        }
-
-        .d-line {
-            height: 1px;
-            flex: 1;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(0, 168, 255, .35)
-                );
-        }
-
-        .d-line:last-child {
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(0, 168, 255, .35),
-                    transparent
-                );
-        }
-
-        .d-icon {
-            color: var(--blue);
-            font-size: 12px;
-
-            text-shadow: 0 0 10px var(--blue);
-        }
-
-
-        /* =========================================================
-           SECTION
-        ========================================================= */
-
-        .intek-section {
-            padding: 75px 0;
-        }
-
-        .section-heading {
-            text-align: center;
-
-            margin-bottom: 45px;
-        }
-
-        .section-label {
-            color: var(--blue);
-
-            font-family: var(--font-ui);
-
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--cyan);
+            background: rgba(0, 234, 255, 0.08);
+            color: var(--cyan);
+            font-family: 'Chakra Petch', sans-serif;
             font-size: 11px;
             font-weight: 700;
-
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-
-            margin-bottom: 12px;
+            margin-bottom: 20px;
         }
 
-        .intek-heading-title {
-            font-family: var(--font-tech);
-
-            font-size: clamp(27px, 4vw, 42px);
-
-            font-weight: 800;
-
-            letter-spacing: 1px;
+        .hero-main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(32px, 4vw, 50px);
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            margin-bottom: 22px;
         }
 
-        .section-description {
-            color: var(--muted);
-
-            max-width: 650px;
-
-            margin: 16px auto 0;
-
-            font-family: var(--font-ui);
-
-            font-size: 14px;
-            line-height: 1.8;
+        .highlight-cyan {
+            color: var(--cyan);
+            text-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
         }
 
-
-        /* =========================================================
-           CATEGORY CARDS
-        ========================================================= */
-
-        .intek-product-flex {
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 18px;
-
-            max-width: 1080px;
-
-            margin: auto;
+        .highlight-blue {
+            color: var(--blue);
+            text-shadow: 0 0 20px rgba(0, 168, 255, 0.5);
         }
 
-        .neon-square-card {
+        .hero-intro-desc {
+            font-size: 15.5px;
+            line-height: 1.85;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 620px;
+        }
+
+        /* Hero Orbit Visual */
+        .hero-orbit-wrap {
             position: relative;
-
-            min-height: 205px;
-
-            padding: 28px 20px;
-
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 1 / 1;
+            margin: auto;
             display: flex;
-            flex-direction: column;
-
             align-items: center;
             justify-content: center;
-
-            text-align: center;
-
-            border:
-                1px solid rgba(0, 168, 255, .2);
-
-            border-radius: 14px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(8, 28, 47, .82),
-                    rgba(3, 12, 22, .92)
-                );
-
-            overflow: hidden;
-
-            transition:
-                transform .35s ease,
-                border-color .35s ease,
-                box-shadow .35s ease;
         }
 
-        .neon-square-card::before {
-            content: "";
-
+        .orbit-ring {
             position: absolute;
-
-            top: 0;
-            left: 0;
-            right: 0;
-
-            height: 1px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    var(--blue),
-                    transparent
-                );
-
-            opacity: .5;
+            border-radius: 50%;
+            border: 1px dashed rgba(0, 234, 255, 0.25);
+            pointer-events: none;
         }
 
-        .neon-square-card::after {
-            content: "";
+        .orbit-ring.r1 {
+            width: 100%;
+            height: 100%;
+            animation: spinOrbit 26s linear infinite;
+        }
 
-            position: absolute;
+        .orbit-ring.r2 {
+            width: 76%;
+            height: 76%;
+            border: 1px solid rgba(0, 168, 255, 0.35);
+            animation: spinOrbitRev 18s linear infinite;
+        }
 
+        @keyframes spinOrbit {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes spinOrbitRev {
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .orbit-core-emblem {
+            position: relative;
+            z-index: 2;
             width: 140px;
             height: 140px;
-
-            left: 50%;
-            top: 45%;
-
-            transform: translate(-50%, -50%);
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(0, 168, 255, .12),
-                    transparent 70%
-                );
-
-            opacity: 0;
-
-            transition: .4s ease;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 168, 255, 0.2) 0%, rgba(3, 8, 17, 0.95) 75%);
+            border: 1px solid var(--cyan);
+            box-shadow: 0 0 35px rgba(0, 234, 255, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .neon-square-card:hover {
-            transform: translateY(-8px);
-
-            border-color:
-                rgba(0, 168, 255, .65);
-
-            box-shadow:
-                0 15px 40px rgba(0, 0, 0, .35),
-                0 0 30px rgba(0, 168, 255, .13);
-        }
-
-        .neon-square-card:hover::after {
-            opacity: 1;
-        }
-
-        .neon-icon-wrap {
-            position: relative;
-            z-index: 2;
-
+        .orbit-core-emblem img {
             width: 75px;
-            height: 75px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            margin-bottom: 22px;
-
-            border:
-                1px solid rgba(0, 168, 255, .3);
-
-            border-radius: 50%;
-
-            background:
-                rgba(0, 168, 255, .04);
-
-            box-shadow:
-                inset 0 0 20px rgba(0, 168, 255, .05);
+            height: auto;
+            filter: drop-shadow(0 0 15px rgba(0, 234, 255, 0.6));
         }
 
-        .neon-icon-wrap::before {
-            content: "";
-
-            position: absolute;
-
-            inset: -8px;
-
-            border:
-                1px dashed rgba(0, 168, 255, .18);
-
-            border-radius: 50%;
+        /* Flagship Solutions Showcase */
+        .flagship-solutions-section {
+            padding: 80px 0;
+            background: #02060d;
+            border-bottom: 1px solid var(--border-subtle);
         }
 
-        .neon-icon {
-            font-size: 28px;
-
-            color: var(--blue);
-
-            filter:
-                drop-shadow(0 0 8px rgba(0, 168, 255, .65));
+        .section-header-center {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 50px;
         }
 
-        .neon-text {
-            position: relative;
-            z-index: 2;
-
-            color: #eef8ff;
-
-            font-family: var(--font-tech);
-
-            font-size: 12px;
-            font-weight: 700;
-
-            letter-spacing: 1.2px;
-
-            line-height: 1.5;
-        }
-
-        .category-index {
-            position: absolute;
-
-            top: 14px;
-            right: 15px;
-
-            color: rgba(0, 168, 255, .4);
-
-            font-family: var(--font-ui);
-
-            font-size: 9px;
-            letter-spacing: 1px;
-        }
-
-
-        /* =========================================================
-           FEATURED PRODUCTS
-        ========================================================= */
-
-        .intek-featured-matrix {
-            display: grid;
-
-            grid-template-columns: 1fr;
-
-            gap: 22px;
-        }
-
-        .product-banner-card {
-            position: relative;
-
-            min-height: 250px;
-
-            border:
-                1px solid rgba(0, 168, 255, .18);
-
-            border-radius: 15px;
-
-            overflow: hidden;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(7, 24, 41, .95),
-                    rgba(2, 10, 18, .98)
-                );
-
-            cursor: pointer;
-
-            transition:
-                transform .35s ease,
-                border-color .35s ease,
-                box-shadow .35s ease;
-        }
-
-        .product-banner-card:hover {
-            transform: translateY(-9px);
-
-            border-color:
-                rgba(0, 168, 255, .6);
-
-            box-shadow:
-                0 20px 45px rgba(0, 0, 0, .35),
-                0 0 35px rgba(0, 168, 255, .1);
-        }
-
-            .product-banner-card.requested-product {
-                border-color: var(--cyan);
-
-                box-shadow:
-                0 0 0 1px rgba(0, 234, 255, .25),
-                0 0 35px rgba(0, 168, 255, .28);
-            }
-
-        .product-banner-card::before {
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: 0;
-            right: 0;
-
-            height: 2px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    var(--blue),
-                    transparent
-                );
-
-            opacity: .7;
-        }
-
-        .product-banner-inner {
-            height: 100%;
-
-            display: grid;
-
-            grid-template-columns: 150px 230px 1fr;
-
-            padding: 0;
-        }
-
-        .product-visual-box {
-            position: relative;
-
-            min-height: 250px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            overflow: hidden;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(0, 168, 255, .14),
-                    transparent 65%
-                );
-
-            border-bottom:
-                none;
-
-            border-right:
-                1px solid rgba(0, 168, 255, .12);
-        }
-
-
-        .product-image-box {
-            min-height: 250px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 14px;
-
-            background: rgba(0, 5, 12, .72);
-
-            border-right:
-                1px solid rgba(0, 168, 255, .12);
-        }
-
-
-        .product-image {
-            width: 145px;
-            height: 225px;
-
-            object-fit: cover;
-
-            border: 1px solid rgba(0, 168, 255, .38);
-
-            box-shadow: 0 0 20px rgba(0, 168, 255, .2);
-
-            transition: transform .35s ease, box-shadow .35s ease;
-        }
-
-
-        .product-banner-card:hover .product-image {
-            transform: scale(1.04);
-
-            box-shadow: 0 0 30px rgba(0, 168, 255, .45);
-        }
-
-        .product-visual-box::before {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background-image:
-                linear-gradient(
-                    rgba(0, 168, 255, .035) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(0, 168, 255, .035) 1px,
-                    transparent 1px
-                );
-
-            background-size: 30px 30px;
-        }
-
-        .product-visual-box i {
-            position: relative;
-            z-index: 2;
-
-            font-size: 68px;
-
-            color: var(--blue);
-
-            filter:
-                drop-shadow(0 0 12px rgba(0, 168, 255, .55));
-
-            transition: .35s ease;
-        }
-
-        .product-banner-card:hover
-        .product-visual-box i {
-            transform: scale(1.12);
-
-            color: var(--cyan);
-
-            filter:
-                drop-shadow(0 0 20px rgba(0, 234, 255, .65));
-        }
-
-        .banner-sku {
-            position: absolute;
-
-            top: 15px;
-            left: 17px;
-
-            z-index: 3;
-
-            padding: 5px 9px;
-
-            border:
-                1px solid rgba(0, 168, 255, .3);
-
-            border-radius: 4px;
-
-            background:
-                rgba(0, 8, 16, .75);
-
-            color: var(--blue);
-
-            font-family: var(--font-ui);
-
-            font-size: 9px;
-            font-weight: 700;
-
-            letter-spacing: 1.5px;
-        }
-
-        .product-status {
-            position: absolute;
-
-            right: 15px;
-            top: 15px;
-
-            z-index: 3;
-
-            color: #bdeeff;
-
-            font-family: var(--font-ui);
-
-            font-size: 8px;
-
-            letter-spacing: 1px;
-
-            padding: 5px 8px;
-
-            border-radius: 4px;
-
-            background:
-                rgba(0, 168, 255, .08);
-
-            border:
-                1px solid rgba(0, 168, 255, .18);
-        }
-
-        .product-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            padding: 28px 30px;
-        }
-
-        .product-category {
-            color: var(--blue);
-
-            font-family: var(--font-ui);
-
-            font-size: 9px;
-            font-weight: 700;
-
-            text-transform: uppercase;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 9px;
-        }
-
-        .product-banner-title {
-            color: white;
-
-            font-family: var(--font-tech);
-
-            font-size: 17px;
-            font-weight: 700;
-
-            line-height: 1.4;
-
-            margin-bottom: 12px;
-        }
-
-        .product-short-desc {
-            color: #8299ad;
-
-            font-family: var(--font-ui);
-
-            font-size: 12px;
-
-            line-height: 1.65;
-
-            margin-bottom: 18px;
-        }
-
-        .product-view {
+        .section-tag {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-
-            color: var(--blue);
-
-            font-family: var(--font-ui);
-
-            font-size: 10px;
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 11px;
             font-weight: 700;
-
-            letter-spacing: 1.5px;
-
-            text-transform: uppercase;
-
-            transition: .3s ease;
-        }
-
-        .product-view i {
-            transition: .3s ease;
-        }
-
-        .product-banner-card:hover .product-view {
             color: var(--cyan);
-        }
-
-        .product-banner-card:hover .product-view i {
-            transform: translateX(5px);
-        }
-
-
-        /* =========================================================
-           BUTTON
-        ========================================================= */
-
-        .intek-btn-center {
-            display: flex;
-            justify-content: center;
-        }
-
-        .intek-button {
-            display: inline-flex;
-
-            align-items: center;
-            justify-content: center;
-
-            min-height: 48px;
-
-            padding: 0 26px;
-
-            border: 1px solid var(--blue);
-
-            border-radius: 5px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(0, 168, 255, .17),
-                    rgba(0, 168, 255, .04)
-                );
-
-            color: white;
-
-            font-family: var(--font-ui);
-
-            font-size: 11px;
-            font-weight: 700;
-
-            letter-spacing: 1.7px;
-
+            letter-spacing: 2px;
             text-transform: uppercase;
-
-            cursor: pointer;
-
-            transition: .3s ease;
+            margin-bottom: 12px;
         }
 
-        .intek-button:hover {
-            background: var(--blue);
-
-            color: #00101b;
-
-            box-shadow:
-                0 0 20px rgba(0, 168, 255, .3);
-
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: #91a6b9;
-            border-color: rgba(255,255,255,.16);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255,255,255,.05);
-            color: white;
-            border-color: rgba(255,255,255,.35);
-            box-shadow: none;
-        }
-
-
-        /* =========================================================
-           BANNER
-        ========================================================= */
-
-        .intek-banner-area {
-            padding: 40px 0 90px;
-        }
-
-        .banner-content-box {
-            position: relative;
-
-            padding: 65px 60px;
-
-            overflow: hidden;
-
-            text-align: center;
-
-            border:
-                1px solid rgba(0, 168, 255, .2);
-
-            border-radius: 15px;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(0, 168, 255, .12),
-                    transparent 65%
-                ),
-                rgba(4, 15, 26, .85);
-        }
-
-        .banner-content-box::before {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(0, 168, 255, .08),
-                    transparent
-                );
-
-            animation: scan 5s linear infinite;
-        }
-
-        @keyframes scan {
-            from {
-                transform: translateX(-100%);
-            }
-
-            to {
-                transform: translateX(100%);
-            }
-        }
-
-        .banner-main-title {
-            position: relative;
-            z-index: 2;
-
-            max-width: 820px;
-
-            margin: auto;
-
-            font-family: var(--font-tech);
-
-            font-size: clamp(20px, 3vw, 31px);
-
-            line-height: 1.5;
-
-            font-weight: 700;
-        }
-
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
-        .intek-footer {
-            border-top:
-                1px solid rgba(0, 168, 255, .14);
-
-            background:
-                rgba(1, 6, 12, .9);
-        }
-
-        .footer-inner {
-            display: grid;
-
-            grid-template-columns:
-                1.2fr .8fr;
-
-            gap: 80px;
-
-            padding: 70px 0;
-        }
-
-        .footer-logo {
-            margin-bottom: 22px;
-        }
-
-        .footer-description {
-            max-width: 500px;
-
-            color: #71889c;
-
-            font-family: var(--font-ui);
-
-            font-size: 12px;
-
-            line-height: 1.8;
-        }
-
-        .footer-motto-line {
-            margin-top: 20px;
-
-            color: var(--blue);
-
-            font-family: var(--font-tech);
-
-            font-size: 10px;
-            font-weight: 700;
-
-            letter-spacing: 2px;
-        }
-
-        .footer-right {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 40px;
-        }
-
-        .footer-heading {
-            color: white;
-
-            font-family: var(--font-tech);
-
-            font-size: 12px;
-
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(26px, 3vw, 36px);
+            font-weight: 800;
             letter-spacing: 1px;
-
-            margin-bottom: 18px;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 14px;
         }
 
-        .footer-links {
-            list-style: none;
-
-            display: flex;
-            flex-direction: column;
-
-            gap: 12px;
-        }
-
-        .footer-links a {
-            color: #71889c;
-
-            font-family: var(--font-ui);
-
-            font-size: 11px;
-
-            transition: .3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--blue);
-            padding-left: 5px;
-        }
-
-        .footer-bottom-bar {
-            border-top:
-                1px solid rgba(0, 168, 255, .08);
-
-            padding: 20px 0;
-        }
-
-        .footer-bottom-bar p {
-            color: #52687a;
-
-            font-family: var(--font-ui);
-
-            font-size: 10px;
-
-            letter-spacing: .5px;
-        }
-
-
-        /* =========================================================
-           MODAL
-        ========================================================= */
-
-        .modal-overlay {
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 5000;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            padding: 20px;
-
-            background:
-                rgba(0, 4, 9, .82);
-
-            backdrop-filter: blur(12px);
-
-            opacity: 0;
-            visibility: hidden;
-
-            transition: .3s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-dialog {
-            position: relative;
-
-            width: min(620px, 100%);
-
-            max-height: 90vh;
-
-            overflow-y: auto;
-
-            padding: 38px;
-
-            border:
-                1px solid rgba(0, 168, 255, .35);
-
-            border-radius: 15px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #071927,
-                    #020a12
-                );
-
-            box-shadow:
-                0 30px 100px rgba(0,0,0,.7),
-                0 0 40px rgba(0,168,255,.1);
-
-            transform: translateY(20px) scale(.98);
-
-            transition: .3s ease;
-        }
-
-        .modal-overlay.active .modal-dialog {
-            transform: translateY(0) scale(1);
-        }
-
-        .modal-close {
-            position: absolute;
-
-            top: 15px;
-            right: 17px;
-
-            width: 35px;
-            height: 35px;
-
-            border: 1px solid rgba(255,255,255,.12);
-
-            border-radius: 50%;
-
-            background: rgba(255,255,255,.04);
-
-            color: #8da2b4;
-
-            font-size: 21px;
-
-            cursor: pointer;
-
-            transition: .3s ease;
-        }
-
-        .modal-close:hover {
-            color: white;
-            border-color: var(--blue);
-        }
-
-        .modal-sku {
-            display: inline-block;
-
-            color: var(--blue);
-
-            font-family: var(--font-ui);
-
-            font-size: 10px;
-            font-weight: 700;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 13px;
-        }
-
-        .modal-title {
-            padding-right: 35px;
-
-            font-family: var(--font-tech);
-
-            font-size: 25px;
-
-            line-height: 1.35;
-
-            margin-bottom: 15px;
-        }
-
-        .modal-desc {
-            color: #8ca3b8;
-
-            font-family: var(--font-ui);
-
-            font-size: 13px;
-
+        .section-desc {
+            font-size: 14.5px;
             line-height: 1.8;
-
-            margin-bottom: 25px;
+            color: var(--text-muted);
         }
 
-        .modal-specs {
+        .flagship-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .flagship-card {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(8, 18, 32, 0.9) 0%, rgba(4, 9, 19, 0.98) 100%);
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+            transition: all 0.35s ease;
+            text-decoration: none;
             display: flex;
             flex-direction: column;
-
-            gap: 10px;
-
-            margin-bottom: 30px;
         }
 
-        .spec-row {
+        .flagship-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--cyan);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 234, 255, 0.25);
+        }
+
+        .flagship-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .flagship-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .flagship-card:hover .flagship-img-wrap img {
+            transform: scale(1.06);
+        }
+
+        .flagship-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(4, 9, 19, 0.95) 100%);
+        }
+
+        .flagship-card-body {
+            padding: 24px 22px;
+            flex: 1;
             display: flex;
+            flex-direction: column;
+        }
 
-            align-items: flex-start;
+        .flagship-badge {
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--cyan);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
 
+        .flagship-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .flagship-text {
+            font-size: 13.5px;
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .flagship-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--cyan);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: gap 0.3s ease;
+        }
+
+        .flagship-card:hover .flagship-link {
             gap: 12px;
-
-            padding: 12px 14px;
-
-            border:
-                1px solid rgba(0,168,255,.1);
-
-            border-radius: 6px;
-
-            background:
-                rgba(0,168,255,.025);
+            color: #ffffff;
         }
 
-        .spec-row i {
-            color: var(--blue);
-
-            margin-top: 3px;
+        /* Category Square Grid (8-Flex) */
+        .categories-section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-subtle);
         }
 
-        .spec-row span {
-            color: #a5b8c8;
-
-            font-family: var(--font-ui);
-
-            font-size: 11px;
-
-            line-height: 1.5;
+        .categories-grid-8 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
         }
 
-        .modal-actions {
+        .cat-cyber-card {
+            background: linear-gradient(135deg, rgba(8, 18, 32, 0.85) 0%, rgba(4, 9, 19, 0.98) 100%);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 26px 18px;
+            text-align: center;
+            position: relative;
+            text-decoration: none;
+            transition: all 0.35s ease;
             display: flex;
-
-            gap: 12px;
-
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
         }
 
+        .cat-cyber-card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 234, 255, 0.2);
+        }
 
-        /* =========================================================
-           FLOATING WHATSAPP
-        ========================================================= */
+        .cat-index {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            color: rgba(0, 234, 255, 0.35);
+        }
 
-        .floating-wa-btn {
-            position: fixed;
-
-            right: 25px;
-            bottom: 25px;
-
-            z-index: 3000;
-
-            width: 55px;
-            height: 55px;
-
+        .cat-icon-wrap {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: rgba(0, 234, 255, 0.08);
+            border: 1px solid var(--border-glow);
+            color: var(--cyan);
             display: flex;
             align-items: center;
             justify-content: center;
-
-            border-radius: 50%;
-
-            background:
-                #00a884;
-
-            color: white;
-
-            font-size: 27px;
-
-            box-shadow:
-                0 8px 30px rgba(0,0,0,.35),
-                0 0 20px rgba(0,168,132,.25);
-
-            transition: .3s ease;
+            font-size: 22px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
         }
 
-        .floating-wa-btn:hover {
-            transform: translateY(-5px) scale(1.05);
+        .cat-cyber-card:hover .cat-icon-wrap {
+            background: rgba(0, 234, 255, 0.2);
+            box-shadow: 0 0 16px rgba(0, 234, 255, 0.5);
+            transform: scale(1.08);
         }
 
-
-        /* =========================================================
-           SCROLL REVEAL
-        ========================================================= */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(25px);
-
-            transition:
-                opacity .7s ease,
-                transform .7s ease;
+        .cat-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-transform: uppercase;
+            line-height: 1.35;
         }
 
-        .reveal.show {
-            opacity: 1;
-            transform: translateY(0);
+        /* CTA Section */
+        .product-cta-section {
+            padding: 80px 0;
         }
 
-
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
-
-        @media (max-width: 1000px) {
-
-            .intek-product-flex {
-                grid-template-columns:
-                    repeat(3, 1fr);
-            }
-
-            .intek-featured-matrix {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-right-col {
-                display: none;
-            }
-
-            .intek-hero {
-                min-height: 480px;
-            }
-
-            .hero-container {
-                min-height: 480px;
-            }
+        .product-cta-box {
+            background: linear-gradient(135deg, rgba(0, 168, 255, 0.12) 0%, rgba(8, 18, 32, 0.95) 100%);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 48px 40px;
+            text-align: center;
+            max-width: 920px;
+            margin: auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 168, 255, 0.2);
         }
 
-        @media (max-width: 760px) {
+        .product-cta-tag {
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            color: var(--cyan);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
 
-            .header-inner {
-                height: 72px;
-            }
+        .product-cta-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
 
-            .mobile-toggle {
-                display: block;
-            }
+        .product-cta-desc {
+            font-size: 14.5px;
+            line-height: 1.8;
+            color: var(--text-muted);
+            max-width: 620px;
+            margin: 0 auto 28px;
+        }
 
-            .intek-nav {
-                position: absolute;
+        .btn-cyber-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 30px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #00c8ff 0%, #0077ff 100%);
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 24px rgba(0, 168, 255, 0.35);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
 
-                left: 0;
-                right: 0;
-                top: 72px;
+        .btn-cyber-primary:hover {
+            background: linear-gradient(135deg, #00eaff 0%, #0096c7 100%);
+            color: #030e18;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 234, 255, 0.55);
+        }
 
-                display: none;
-
-                background:
-                    rgba(2, 8, 16, .97);
-
-                border-bottom:
-                    1px solid rgba(0,168,255,.15);
-            }
-
-            .intek-nav.open {
-                display: block;
-            }
-
-            .intek-nav-list {
-                flex-direction: column;
-
-                align-items: stretch;
-
-                gap: 0;
-
-                padding: 15px 20px 20px;
-            }
-
-            .intek-nav-list li a {
-                display: block;
-
-                padding: 14px 5px;
-            }
-
-            .intek-nav-list a::after {
-                bottom: 5px;
-            }
-
-            .intek-product-flex {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .intek-featured-matrix {
-                grid-template-columns: 1fr;
-            }
-
-            .product-banner-inner {
-                grid-template-columns: 120px 180px 1fr;
-            }
-
-            .product-image-box {
-                min-height: 220px;
-            }
-
-            .product-image {
-                width: 125px;
-                height: 195px;
-            }
-
-            .footer-inner {
-                grid-template-columns: 1fr;
-
-                gap: 45px;
-            }
-
-            .footer-right {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .intek-section {
-                padding: 55px 0;
-            }
-
-            .banner-content-box {
-                padding: 45px 25px;
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .categories-grid-8 {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
-        @media (max-width: 500px) {
-
-            .intek-container {
-                width: min(100% - 28px, 1180px);
+        @media (max-width: 900px) {
+            .product-hero-grid,
+            .flagship-grid-3 {
+                grid-template-columns: 1fr;
+                gap: 32px;
             }
 
-            .intek-product-flex {
-                grid-template-columns: 1fr 1fr;
-
-                gap: 12px;
+            .hero-orbit-wrap {
+                max-width: 300px;
             }
 
-            .neon-square-card {
-                min-height: 175px;
+            .categories-grid-8 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-                padding: 20px 10px;
+        @media (max-width: 600px) {
+            .product-hero-section {
+                padding-top: 100px;
             }
 
-            .neon-icon-wrap {
-                width: 62px;
-                height: 62px;
-
-                margin-bottom: 18px;
-            }
-
-            .neon-icon {
-                font-size: 23px;
-            }
-
-            .neon-text {
-                font-size: 9px;
-                letter-spacing: .8px;
-            }
-
-            .hero-title {
-                font-size: 44px;
-            }
-
-            .hero-paragraphs p {
-                font-size: 13px;
-            }
-
-            .product-visual-box {
-                min-height: 190px;
-            }
-
-            .product-banner-inner {
+            .categories-grid-8,
+            .products-cards-grid {
                 grid-template-columns: 1fr;
             }
 
-            .product-visual-box,
-            .product-image-box {
-                min-height: 180px;
-                border-right: none;
-                border-bottom: 1px solid rgba(0, 168, 255, .12);
-            }
-
-            .product-image {
-                width: 120px;
-                height: 180px;
-            }
-
-            .product-info {
-                padding: 20px;
-            }
-
-            .product-banner-title {
-                font-size: 14px;
-            }
-
-            .product-short-desc {
-                font-size: 11px;
-            }
-
-            .footer-right {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-inner {
-                padding: 50px 0;
-            }
-
-            .modal-dialog {
-                padding: 28px 20px;
+            .product-cta-box {
+                padding: 32px 20px;
             }
 
             .modal-actions {
                 flex-direction: column;
-            }
-
-            .modal-actions .intek-button {
                 width: 100%;
             }
 
-            .floating-wa-btn {
-                width: 50px;
-                height: 50px;
-
-                right: 17px;
-                bottom: 17px;
-
-                font-size: 23px;
+            .modal-inquire-btn,
+            .modal-dismiss-btn {
+                width: 100%;
+                justify-content: center;
             }
         }
-
     </style>
 </head>
 
-
 <body class="intek-body">
 
-
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
-<header class="intek-header">
-
-    <div class="intek-container header-inner">
-
-        <a href="index.html" class="intek-brand-logo">
-
-            <img src="assets/logo.png"
-                 alt="PT Fortunet Solusi Indonesia"
-                 class="brand-img">
-
-            <div class="brand-text">
-                <span class="brand-name">FORTUNET</span>
-                <span class="brand-sub">SOLUSI INDONESIA</span>
-            </div>
-
-        </a>
-
-
-        <nav class="intek-nav" id="mainNav">
-
-            <ul class="intek-nav-list" id="navMenu">
-
-                <li class="nav-item">
-                    <a href="index.html">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="about.html">About</a>
-                </li>
-
-                <li class="nav-item active">
-                    <a href="product.html">Product</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="contact.html">Contact</a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-
-        <button class="mobile-toggle"
-                id="menuToggle"
-                aria-label="Toggle Navigation">
-
-            <i class="fa-solid fa-bars"></i>
-
-        </button>
-
-    </div>
-
-</header>
-
-
-<main>
-
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
-<section class="intek-hero">
-
-    <div class="intek-container hero-container">
-
-        <div class="hero-left-col reveal">
-
-            <div class="hero-eyebrow">
-                <span></span>
-                FORTUNET TECHNOLOGY SYSTEM
-            </div>
-
-
-            <h1 class="hero-title">
-
-                PRODUCT
-
-                <br>
-
-                <span class="accent-highlight">
-                    CATALOG
-                </span>
-
-            </h1>
-
-
-            <div class="hero-paragraphs">
-
-                <p>
-                    Advanced intelligence, surveillance and security
-                    technology engineered to support critical operations,
-                    technical security, airspace protection and enterprise
-                    infrastructure.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-right-col">
-
-            <div class="hero-tech-orbit">
-
-                <div class="orbit orbit-1"></div>
-                <div class="orbit orbit-2"></div>
-                <div class="orbit orbit-3"></div>
-
-                <span class="orbit-dot dot-1"></span>
-                <span class="orbit-dot dot-2"></span>
-                <span class="orbit-dot dot-3"></span>
-
-                <img src="assets/logo.png"
-                     alt="Fortunet Technology"
-                     class="hero-logogram">
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     DIVIDER
-========================================================= -->
-
-<div class="intek-divider">
-
-    <span class="d-line"></span>
-
-    <span class="d-icon">
-        <i class="fas fa-minus"></i>
-    </span>
-
-    <span class="d-line"></span>
-
-</div>
-
-
-<!-- =========================================================
-     PRODUCT CATEGORIES
-========================================================= -->
-
-<section class="intek-section" id="categories">
-
-    <div class="intek-container">
-
-        <div class="section-heading reveal">
-
-            <div class="section-label">
-                TECHNOLOGY PORTFOLIO
-            </div>
-
-            <h2 class="intek-heading-title">
-
-                Product
-                <span class="accent-highlight">
-                    Categories
-                </span>
-
-            </h2>
-
-            <p class="section-description">
-                Explore our technology categories designed for
-                security, intelligence, surveillance and enterprise
-                technology requirements.
-            </p>
-
-        </div>
-
-
-        <div class="intek-product-flex">
-
-
-            <!-- CATEGORY 01 -->
-
-            <a href="#featured"
-               class="neon-square-card reveal">
-
-                <span class="category-index">
-                    01
-                </span>
-
-                <div class="neon-icon-wrap">
-
-                    <i class="fa-solid fa-camera neon-icon"></i>
-
-                </div>
-
-                <div class="neon-text">
-                    CAMERA
-                    <br>
-                    DETECTOR
-                </div>
-
-            </a>
-
-
-            <!-- CATEGORY 02 -->
-
-            <a href="#featured"
-               class="neon-square-card reveal">
-
-                <span class="category-index">
-                    02
-                </span>
-
-                <div class="neon-icon-wrap">
-
-                    <i class="fa-solid fa-crosshairs neon-icon"></i>
-
-                </div>
-
-                <div class="neon-text">
-                    DRONE
-                    <br>
-                    HUNTER
-                </div>
-
-            </a>
-
-
-            <!-- CATEGORY 03 -->
-
-            <a href="#featured"
-               class="neon-square-card reveal">
-
-                <span class="category-index">
-                    03
-                </span>
-
-                <div class="neon-icon-wrap">
-
-                    <i class="fa-solid fa-tower-broadcast neon-icon"></i>
-
-                </div>
-
-                <div class="neon-text">
-                    SIGNAL
-                    <br>
-                    SECURITY
-                </div>
-
-            </a>
-
-
-            <!-- CATEGORY 04 -->
-
-            <a href="#featured"
-               class="neon-square-card reveal">
-
-                <span class="category-index">
-                    04
-                </span>
-
-                <div class="neon-icon-wrap">
-
-                    <i class="fa-solid fa-wifi neon-icon"></i>
-
-                </div>
-
-                <div class="neon-text">
-                    WIRELESS
-                    <br>
-                    SECURITY
-                </div>
-
-            </a>
-
-
-            <!-- CATEGORY 05 -->
-
-            <a href="#featured"
-               class="neon-square-card reveal">
-
-                <span class="category-index">
-                    05
-                </span>
-
-                <div class="neon-icon-wrap">
-
-                    <i class="fa-solid fa-shield-halved neon-icon"></i>
-
-                </div>
-
-                <div class="neon-text">
-                    ANTI
-                    <br>
-                    DRONE
-                </div>
-
-            </a>
-
-
-            <!-- CATEGORY 06 -->
-
-            <a href="#featured"
-               class="neon-square-card reveal">
-
-                <span class="category-index">
-                    06
-                </span>
-
-                <div class="neon-icon-wrap">
-
-                    <i class="fa-solid fa-video neon-icon"></i>
-
-                </div>
-
-                <div class="neon-text">
-                    CCTV
-                    <br>
-                    MONITORING
-                </div>
-
-            </a>
-
-
-            <!-- CATEGORY 07 -->
-
-            <a href="#featured"
-               class="neon-square-card reveal">
-
-                <span class="category-index">
-                    07
-                </span>
-
-                <div class="neon-icon-wrap">
-
-                    <i class="fa-solid fa-users-viewfinder neon-icon"></i>
-
-                </div>
-
-                <div class="neon-text">
-                    AI
-                    <br>
-                    ANALYTICS
-                </div>
-
-            </a>
-
-
-            <!-- CATEGORY 08 -->
-
-            <a href="#featured"
-               class="neon-square-card reveal">
-
-                <span class="category-index">
-                    08
-                </span>
-
-                <div class="neon-icon-wrap">
-
-                    <i class="fa-solid fa-server neon-icon"></i>
-
-                </div>
-
-                <div class="neon-text">
-                    ENTERPRISE
-                    <br>
-                    IT
-                </div>
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     DIVIDER
-========================================================= -->
-
-<div class="intek-divider">
-
-    <span class="d-line"></span>
-
-    <span class="d-icon">
-        <i class="fas fa-minus"></i>
-    </span>
-
-    <span class="d-line"></span>
-
-</div>
-
-
-<!-- =========================================================
-     FEATURED PRODUCTS
-========================================================= -->
-
-<section class="intek-section" id="featured">
-
-    <div class="intek-container">
-
-        <div class="section-heading reveal">
-
-            <div class="section-label">
-                SELECTED SOLUTIONS
-            </div>
-
-            <h2 class="intek-heading-title">
-
-                Featured
-                <span class="accent-highlight">
-                    Products
-                </span>
-
-            </h2>
-
-            <p class="section-description">
-                Selected technology solutions from Fortunet's
-                intelligence, surveillance and security portfolio.
-            </p>
-
-        </div>
-
-
-        <div class="intek-featured-matrix">
-
-
-            <!-- PRODUCT 01 -->
-
-            <div class="product-banner-card view-modal-trigger reveal"
-
-                 data-name="Camera Detector Pro"
-
-                 data-product-key="camera"
-
-                 data-code="FSI-CD-01"
-
-                 data-badge="TSCM STANDARD"
-
-                 data-category="Technical Surveillance"
-
-                 data-desc="Optical detection technology designed to assist security teams in identifying concealed optical camera lenses and surveillance devices."
-
-                 data-specs="Detection Range: Up to 15 Meters | Spectrum: Optical Laser + IR Sensor Array | Battery: Up to 8 Hours Continuous Operation | Form Factor: Lightweight Tactical Design">
-
-                <div class="product-banner-inner">
-
-                    <div class="product-visual-box">
-
-                        <span class="banner-sku">
-                            FSI-CD-01
-                        </span>
-
-                        <span class="product-status">
-                            TSCM
-                        </span>
-
-                        <i class="fa-solid fa-camera"></i>
-
-                    </div>
-
-                    <div class="product-image-box">
-                        <img class="product-image" src="assets/pdf-extracted/pdf-4-74.png" alt="Camera Detector product">
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <div class="product-category">
-                            Technical Surveillance
-                        </div>
-
-                        <h4 class="product-banner-title">
-                            Camera Detector Pro
-                        </h4>
-
-                        <p class="product-short-desc">
-                            Advanced optical detection solution
-                            for security inspection environments.
-                        </p>
-
-                        <span class="product-view">
-                            View Specification
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 02 -->
-
-            <div class="product-banner-card view-modal-trigger reveal"
-
-                 data-name="Drone Hunter Tactical Scanner"
-
-                 data-product-key="drone"
-
-                 data-code="FSI-DH-02"
-
-                 data-badge="ANTI-UAV DEFENSE"
-
-                 data-category="Airspace Security"
-
-                 data-desc="RF detection and direction-finding technology designed to provide early warning of unauthorized unmanned aerial systems."
-
-                 data-specs="Detection Radius: Up to 3–5 KM | Frequency Coverage: Multi-band RF detection | Response: Rapid Detection | Application: Perimeter and Airspace Monitoring">
-
-                <div class="product-banner-inner">
-
-                    <div class="product-visual-box">
-
-                        <span class="banner-sku">
-                            FSI-DH-02
-                        </span>
-
-                        <span class="product-status">
-                            ANTI-UAV
-                        </span>
-
-                        <i class="fa-solid fa-crosshairs"></i>
-
-                    </div>
-
-                    <div class="product-image-box">
-                        <img class="product-image" src="assets/pdf-extracted/pdf-4-75.png" alt="Drone Hunter product">
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <div class="product-category">
-                            Airspace Security
-                        </div>
-
-                        <h4 class="product-banner-title">
-                            Drone Hunter Scanner
-                        </h4>
-
-                        <p class="product-short-desc">
-                            RF-based detection solution for
-                            unauthorized drone activity.
-                        </p>
-
-                        <span class="product-view">
-                            View Specification
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 03 -->
-
-            <div class="product-banner-card view-modal-trigger reveal"
-
-                 data-name="Anti-Drone Tactical System"
-
-                 data-product-key="anti-drone"
-
-                 data-code="FSI-ADJ-03"
-
-                 data-badge="PERIMETER DEFENSE"
-
-                 data-category="Counter-UAS"
-
-                 data-desc="Directional counter-UAS technology designed for authorized security and perimeter protection applications."
-
-                 data-specs="Application: Counter-UAS Security | Coverage: Directional | Control: Tactical Operation | Deployment: Authorized Security Environment">
-
-                <div class="product-banner-inner">
-
-                    <div class="product-visual-box">
-
-                        <span class="banner-sku">
-                            FSI-ADJ-03
-                        </span>
-
-                        <span class="product-status">
-                            DEFENSE
-                        </span>
-
-                        <i class="fa-solid fa-shield-halved"></i>
-
-                    </div>
-
-                    <div class="product-image-box">
-                        <img class="product-image" src="assets/pdf-extracted/pdf-4-78.png" alt="Anti Drone product">
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <div class="product-category">
-                            Counter-UAS
-                        </div>
-
-                        <h4 class="product-banner-title">
-                            Anti-Drone Tactical System
-                        </h4>
-
-                        <p class="product-short-desc">
-                            Tactical counter-UAS technology
-                            for authorized perimeter security.
-                        </p>
-
-                        <span class="product-view">
-                            View Specification
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 04 -->
-
-            <div class="product-banner-card view-modal-trigger reveal"
-
-                 data-name="Multi-Band Signal Security System"
-
-                 data-product-key="jammer"
-
-                 data-code="FSI-JM-04"
-
-                 data-badge="PRIVACY GUARD"
-
-                 data-category="Signal Security"
-
-                 data-desc="Security technology designed to support controlled environments where wireless communication management and information protection are required."
-
-                 data-specs="Application: Secure Meeting Environments | Coverage: Configurable | Supported Systems: Cellular & Wireless Infrastructure | Housing: Executive Deployment">
-
-                <div class="product-banner-inner">
-
-                    <div class="product-visual-box">
-
-                        <span class="banner-sku">
-                            FSI-JM-04
-                        </span>
-
-                        <span class="product-status">
-                            PRIVACY
-                        </span>
-
-                        <i class="fa-solid fa-tower-broadcast"></i>
-
-                    </div>
-
-                    <div class="product-image-box">
-                        <img class="product-image" src="assets/pdf-extracted/pdf-4-76.png" alt="Jammer Blacklist product">
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <div class="product-category">
-                            Signal Security
-                        </div>
-
-                        <h4 class="product-banner-title">
-                            Multi-Band Signal Security
-                        </h4>
-
-                        <p class="product-short-desc">
-                            Technology for controlled wireless
-                            environments and information security.
-                        </p>
-
-                        <span class="product-view">
-                            View Specification
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 05 -->
-
-            <div class="product-banner-card view-modal-trigger reveal"
-
-                 data-name="Wireless Eavesdropping Detector"
-
-                 data-product-key="wireless"
-
-                 data-code="FSI-TSCM-05"
-
-                 data-badge="TSCM SWEEPER"
-
-                 data-category="TSCM Technology"
-
-                 data-desc="Wideband RF inspection technology designed to support technical surveillance countermeasure activities and wireless signal analysis."
-
-                 data-specs="Frequency Range: 100 kHz – 12 GHz | Analysis: Real-Time Spectrum Analysis | Detection: Wideband RF Signals | Application: TSCM Inspection">
-
-                <div class="product-banner-inner">
-
-                    <div class="product-visual-box">
-
-                        <span class="banner-sku">
-                            FSI-TSCM-05
-                        </span>
-
-                        <span class="product-status">
-                            TSCM
-                        </span>
-
-                        <i class="fa-solid fa-ear-listen"></i>
-
-                    </div>
-
-                    <div class="product-image-box">
-                        <img class="product-image" src="assets/pdf-extracted/pdf-4-77.png" alt="Wireless Eavesdropping product">
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <div class="product-category">
-                            TSCM Technology
-                        </div>
-
-                        <h4 class="product-banner-title">
-                            Wireless Bug Sweeper
-                        </h4>
-
-                        <p class="product-short-desc">
-                            Wideband RF inspection solution for
-                            professional technical security audits.
-                        </p>
-
-                        <span class="product-view">
-                            View Specification
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT 06 -->
-
-            <div class="product-banner-card view-modal-trigger reveal"
-
-                 data-name="AI Face Recognition Engine"
-
-                 data-product-key="mass-report"
-
-                 data-code="FSI-BL-06"
-
-                 data-badge="AI ANALYTICS"
-
-                 data-category="Artificial Intelligence"
-
-                 data-desc="AI-powered video analytics platform designed for authorized surveillance, identity matching and security monitoring environments."
-
-                 data-specs="Analytics: AI Face Recognition | Integration: ONVIF / RTSP | Application: Security Monitoring | Deployment: Enterprise Infrastructure">
-
-                <div class="product-banner-inner">
-
-                    <div class="product-visual-box">
-
-                        <span class="banner-sku">
-                            FSI-BL-06
-                        </span>
-
-                        <span class="product-status">
-                            AI
-                        </span>
-
-                        <i class="fa-solid fa-user-shield"></i>
-
-                    </div>
-
-                    <div class="product-image-box">
-                        <img class="product-image" src="assets/pdf-extracted/pdf-4-80.png" alt="Mass Report product">
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <div class="product-category">
-                            Artificial Intelligence
-                        </div>
-
-                        <h4 class="product-banner-title">
-                            AI Face Recognition Engine
-                        </h4>
-
-                        <p class="product-short-desc">
-                            Intelligent video analytics for
-                            enterprise security environments.
-                        </p>
-
-                        <span class="product-view">
-                            View Specification
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="intek-btn-center"
-             style="margin-top:50px;">
-
-            <a href="contact.html"
-               class="intek-button">
-
-                Discuss Your Requirements
-                <i class="fa-solid fa-arrow-right"
-                   style="margin-left:10px;"></i>
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     DIVIDER
-========================================================= -->
-
-<div class="intek-divider">
-
-    <span class="d-line"></span>
-
-    <span class="d-icon">
-        <i class="fas fa-minus"></i>
-    </span>
-
-    <span class="d-line"></span>
-
-</div>
-
-
-<!-- =========================================================
-     BANNER
-========================================================= -->
-
-<section class="intek-banner-area">
-
-    <div class="intek-container">
-
-        <div class="banner-content-box reveal">
-
-            <h2 class="banner-main-title">
-
-                Lead the way in business &amp; technology
-                with our advanced solutions.
-
-            </h2>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer class="intek-footer">
-
-    <div class="intek-container footer-inner">
-
-
-        <div class="footer-left">
-
-            <a href="index.html"
-               class="intek-brand-logo footer-logo">
-
-                <img src="assets/logo.png"
-                     alt="Fortunet Logo"
-                     class="brand-img">
-
+    <!-- =========================================================
+         HEADER / NAVIGATION
+    ========================================================== -->
+    <header class="intek-header">
+        <div class="intek-container header-inner">
+            <a href="index.html" class="intek-brand-logo">
+                <img src="assets/logo.png" alt="PT Fortunet Solusi Indonesia" class="brand-img">
                 <div class="brand-text">
+                    <span class="brand-name">FORTUNET</span>
+                    <span class="brand-sub">SOLUSI INDONESIA</span>
+                </div>
+            </a>
 
-                    <span class="brand-name">
-                        FORTUNET
-                    </span>
+            <nav class="intek-nav">
+                <ul class="intek-nav-list" id="navMenu">
+                    <li class="nav-item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="product.html">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
 
-                    <span class="brand-sub">
-                        SOLUSI INDONESIA
-                    </span>
+            <button type="button" class="mobile-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
+    <main>
+
+        <!-- =====================================================
+             1. HERO SECTION
+        ====================================================== -->
+        <section class="product-hero-section">
+            <div class="intek-container product-hero-grid">
+                
+                <!-- Left: Hero Info -->
+                <div class="product-hero-content" data-aos="fade-right" data-aos-duration="850">
+                    <div class="hero-eyebrow">
+                        <i class="fa-solid fa-microchip"></i> Technology &amp; Hardware Portfolio
+                    </div>
+
+                    <h1 class="hero-main-title">
+                        PRODUCT &amp; <br><span class="highlight-cyan">SOLUTION</span> <span class="highlight-blue">CATALOG</span>
+                    </h1>
+
+                    <p class="hero-intro-desc">
+                        Advanced intelligence, tactical surveillance, and security technology engineered to support critical defense operations, technical security (TSCM), airspace protection, and enterprise infrastructure.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#flagship" class="btn-cyber-primary">
+                            <span>Explore Solutions</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Orbit Visual -->
+                <div class="product-hero-visual" data-aos="zoom-in" data-aos-duration="850">
+                    <div class="hero-orbit-wrap">
+                        <div class="orbit-ring r1"></div>
+                        <div class="orbit-ring r2"></div>
+                        <div class="orbit-core-emblem">
+                            <img src="assets/logo.png" alt="PT Fortunet Solusi Indonesia Emblem">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             2. FLAGSHIP SOLUTION SUITES
+        ====================================================== -->
+        <section class="flagship-solutions-section" id="flagship">
+            <div class="intek-container">
+                
+                <div class="section-header-center" data-aos="fade-up">
+                    <div class="section-tag">
+                        <i class="fa-solid fa-shield-halved"></i> Integrated Systems
+                    </div>
+                    <h2 class="section-title">Flagship <span class="highlight-cyan">Solutions</span></h2>
+                    <p class="section-desc">
+                        Comprehensive tactical security, counter-surveillance, and intelligence analytics ecosystems.
+                    </p>
+                </div>
+
+                <div class="flagship-grid-3">
+                    
+                    <!-- Suite 1: VIP Solution -->
+                    <a href="vip-solution.html" class="flagship-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flagship-img-wrap">
+                            <img src="assets/pdf-extracted/pdf-4-78.png" alt="VIP Solution">
+                            <div class="flagship-img-overlay"></div>
+                        </div>
+                        <div class="flagship-card-body">
+                            <div class="flagship-badge">Tactical &amp; Executive</div>
+                            <h3 class="flagship-title">VIP Solution</h3>
+                            <p class="flagship-text">
+                                Integrated executive protection, tactical vehicle security, convoy defense, and encrypted communication systems.
+                            </p>
+                            <span class="flagship-link">
+                                Explore Solution <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Suite 2: Counter Surveillance -->
+                    <a href="counter-surveillance.html" class="flagship-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flagship-img-wrap">
+                            <img src="assets/pdf-extracted/pdf-4-74.png" alt="Counter Surveillance">
+                            <div class="flagship-img-overlay"></div>
+                        </div>
+                        <div class="flagship-card-body">
+                            <div class="flagship-badge">TSCM &amp; Inspection</div>
+                            <h3 class="flagship-title">Counter Surveillance</h3>
+                            <p class="flagship-text">
+                                Professional bug sweeping, non-linear junction detection, optical camera discovery, and acoustic jamming.
+                            </p>
+                            <span class="flagship-link">
+                                Explore Solution <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Suite 3: SMAC -->
+                    <a href="sosial-media-analytics-center.html" class="flagship-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flagship-img-wrap">
+                            <img src="assets/pdf-extracted/pdf-4-79.png" alt="Social Media Analytics Center">
+                            <div class="flagship-img-overlay"></div>
+                        </div>
+                        <div class="flagship-card-body">
+                            <div class="flagship-badge">Digital Intelligence</div>
+                            <h3 class="flagship-title">Social Media Analytics Center</h3>
+                            <p class="flagship-text">
+                                Real-time open-source intelligence platform, automated sentiment monitoring, campaign management, and mass reporting.
+                            </p>
+                            <span class="flagship-link">
+                                Explore Solution <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
 
                 </div>
 
-            </a>
+            </div>
+        </section>
 
 
-            <p class="footer-description">
+        <!-- =====================================================
+             3. PRODUCT CATEGORIES (SYNCHRONIZED WITH COUNTER SURVEILLANCE)
+        ====================================================== -->
+        <section class="categories-section" id="categories">
+            <div class="intek-container">
+                
+                <div class="section-header-center" data-aos="fade-up">
+                    <div class="section-tag">
+                        <i class="fa-solid fa-cubes"></i> Technology Portfolio
+                    </div>
+                    <h2 class="section-title">Product <span class="highlight-cyan">Categories</span></h2>
+                    <p class="section-desc">
+                        Explore our comprehensive counter-surveillance, tactical defense, and specialized intelligence technology portfolio.
+                    </p>
+                </div>
 
-                Focus on development and application of
-                information technology, especially on
-                Intelligence Information Technology &
-                Intelligence Equipment in Indonesia.
+                <div class="categories-grid-8">
+                    
+                    <!-- 01: ANTI DRONE -->
+                    <a href="product-anti-drone.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="50">
+                        <span class="cat-index">01</span>
+                        <div class="cat-icon-wrap">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="cat-name">ANTI<br>DRONE</div>
+                    </a>
 
-            </p>
+                    <!-- 02: CAMERA DETECTOR -->
+                    <a href="product-camera.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="80">
+                        <span class="cat-index">02</span>
+                        <div class="cat-icon-wrap">
+                            <i class="fa-solid fa-camera"></i>
+                        </div>
+                        <div class="cat-name">CAMERA<br>DETECTOR</div>
+                    </a>
 
+                    <!-- 03: DRONE HUNTER -->
+                    <a href="product-drone.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="110">
+                        <span class="cat-index">03</span>
+                        <div class="cat-icon-wrap">
+                            <i class="fa-solid fa-crosshairs"></i>
+                        </div>
+                        <div class="cat-name">DRONE<br>HUNTER</div>
+                    </a>
 
-            <div class="footer-motto-line">
+                    <!-- 04: JUNCTION DETECTOR -->
+                    <a href="product-junction-detector.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="140">
+                        <span class="cat-index">04</span>
+                        <div class="cat-icon-wrap">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <div class="cat-name">JUNCTION<br>DETECTOR</div>
+                    </a>
 
-                LEAVE IT TO US — TRUST IN TECHNOLOGY
+                    <!-- 05: WIRELESS EAVESDROPPING -->
+                    <a href="product-wireless.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="170">
+                        <span class="cat-index">05</span>
+                        <div class="cat-icon-wrap">
+                            <i class="fa-solid fa-wifi"></i>
+                        </div>
+                        <div class="cat-name">WIRELESS<br>EAVESDROPPING</div>
+                    </a>
+
+                    <!-- 06: JAMMER -->
+                    <a href="product-jammer.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="200">
+                        <span class="cat-index">06</span>
+                        <div class="cat-icon-wrap">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div class="cat-name">JAMMER<br>(WHITELIST &amp; BLACKLIST)</div>
+                    </a>
+
+                    <!-- 07: WBS BLASTER -->
+                    <a href="product-wbs-blaster.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="230">
+                        <span class="cat-index">07</span>
+                        <div class="cat-icon-wrap">
+                            <i class="fa-solid fa-tower-broadcast"></i>
+                        </div>
+                        <div class="cat-name">WBS<br>BLASTER</div>
+                    </a>
+
+                    <!-- 08: ACOUSTIC JAMMER -->
+                    <a href="product-acoustic-jammer.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="260">
+                        <span class="cat-index">08</span>
+                        <div class="cat-icon-wrap">
+                            <i class="fa-solid fa-microphone-slash"></i>
+                        </div>
+                        <div class="cat-name">ACOUSTIC<br>JAMMER</div>
+                    </a>
+
+                    <!-- 09: GPS SPOOFING -->
+                    <a href="product-gps-spoofing.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="290">
+                        <span class="cat-index">09</span>
+                        <div class="cat-icon-wrap">
+                            <i class="fa-solid fa-satellite-dish"></i>
+                        </div>
+                        <div class="cat-name">GPS<br>SPOOFING</div>
+                    </a>
+
+                    <!-- 10: WIFI ANALYZER -->
+                    <a href="product-wifi-analyzer.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="320">
+                        <span class="cat-index">10</span>
+                        <div class="cat-icon-wrap">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div class="cat-name">WIFI<br>ANALYZER</div>
+                    </a>
+
+                    <!-- 11: LONG RANGE CAMERA -->
+                    <a href="product-long-range-camera.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="350">
+                        <span class="cat-index">11</span>
+                        <div class="cat-icon-wrap">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <div class="cat-name">LONG RANGE<br>CAMERA</div>
+                    </a>
+
+                    <!-- 12: ENTERPRISE IT -->
+                    <a href="contact.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="380">
+                        <span class="cat-index">12</span>
+                        <div class="cat-icon-wrap">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <div class="cat-name">ENTERPRISE<br>IT &amp; SERVERS</div>
+                    </a>
+
+                </div>
 
             </div>
-
-        </div>
-
-
-        <div class="footer-right">
+        </section>
 
 
-            <div class="footer-col">
-
-                <h5 class="footer-heading">
-                    Navigation
-                </h5>
-
-                <ul class="footer-links">
-
-                    <li>
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="about.html">
-                            About
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="product.html">
-                            Product
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="contact.html">
-                            Contact
-                        </a>
-                    </li>
-
-                </ul>
-
+        <!-- =====================================================
+             4. CALL TO ACTION BANNER
+        ====================================================== -->
+        <section class="product-cta-section">
+            <div class="intek-container">
+                <div class="product-cta-box" data-aos="zoom-in" data-aos-duration="800">
+                    <div class="product-cta-tag">PT Fortunet Solusi Indonesia</div>
+                    <h2 class="product-cta-title">Need custom hardware or specialized defense configurations?</h2>
+                    <p class="product-cta-desc">
+                        Our engineering team provides comprehensive system integration, specialized procurement, and customized security equipment deployment.
+                    </p>
+                    <a href="contact.html" class="btn-cyber-primary">
+                        <span>Request Official Consultation</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
+        </section>
+
+    </main>
 
 
-            <div class="footer-col">
-
-                <h5 class="footer-heading">
-                    Solutions
-                </h5>
-
-                <ul class="footer-links">
-
-                    <li>
-                        <a href="solutions.html#tscm">
-                            Cyber Security &amp; TSCM
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="solutions.html#antidrone">
-                            Anti-Drone Systems
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="solutions.html#it-infra">
-                            Enterprise IT &amp; Servers
-                        </a>
-                    </li>
-
-                </ul>
-
+    <!-- =========================================================
+         STANDARD FOOTER
+    ========================================================== -->
+    <footer class="intek-footer">
+        <div class="intek-container footer-grid">
+            <div class="footer-left">
+                <a href="index.html" class="intek-brand-logo footer-logo">
+                    <img src="assets/logo.png" alt="Fortunet Logo" class="brand-img">
+                    <div class="brand-text">
+                        <span class="brand-name">FORTUNET</span>
+                        <span class="brand-sub">SOLUSI INDONESIA</span>
+                    </div>
+                </a>
+                <p class="footer-description">
+                    Focus on development and application of information technology, especially on Intelligence Information Technology &amp; Intelligence Equipment in Indonesia.
+                </p>
+                <div class="footer-motto-line">LEAVE IT TO US — TRUST IN TECHNOLOGY</div>
+                <div class="footer-contact-row">
+                    <a href="tel:+622138711261" class="footer-contact-chip">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>(+62 21) 3871-1261</span>
+                    </a>
+                    <a href="mailto:info@fortunetindonesia.com" class="footer-contact-chip">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@fortunetindonesia.com</span>
+                    </a>
+                </div>
             </div>
-
-
         </div>
 
-    </div>
-
-
-    <div class="footer-bottom-bar">
-
-        <div class="intek-container">
-
-            <p>
-                © 2026 PT. Fortunet Solusi Indonesia.
-                All Rights Reserved.
-            </p>
-
+        <div class="footer-bottom-bar">
+            <div class="intek-container">
+                <p>© 2026 PT. Fortunet Solusi Indonesia. All Rights Reserved.</p>
+            </div>
         </div>
-
-    </div>
-
-</footer>
-
-
-<!-- =========================================================
-     PRODUCT DETAIL MODAL
-========================================================= -->
-
-<div class="modal-overlay"
-     id="productModal">
-
-    <div class="modal-dialog">
-
-        <button class="modal-close"
-                id="modalClose"
-                aria-label="Close">
-
-            &times;
-
-        </button>
-
-
-        <span class="modal-sku"
-              id="modalCode">
-
-            FSI-CD-01
-
-        </span>
-
-
-        <h3 class="modal-title"
-            id="modalTitle">
-
-            Camera Detector Pro
-
-        </h3>
-
-
-        <p class="modal-desc"
-           id="modalDesc">
-
-            Detailed specifications.
-
-        </p>
-
-
-        <div class="modal-specs"
-             id="modalSpecsContent">
-
-        </div>
-
-
-        <div class="modal-actions">
-
-            <a href="contact.html"
-               class="intek-button">
-
-                Request Quote
-
-            </a>
-
-
-            <button class="intek-button btn-outline"
-                    id="modalDismissBtn">
-
-                Close
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     WHATSAPP
-========================================================= -->
-
-<a href="https://wa.me/6281234567890"
-   target="_blank"
-   rel="noopener"
-   class="floating-wa-btn"
-   aria-label="WhatsApp">
-
-    <i class="fa-brands fa-whatsapp"></i>
-
-</a>
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script>
-
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
-
-    const menuToggle =
-        document.getElementById("menuToggle");
-
-    const mainNav =
-        document.getElementById("mainNav");
-
-    menuToggle.addEventListener("click", function () {
-
-        mainNav.classList.toggle("open");
-
-        const icon =
-            menuToggle.querySelector("i");
-
-        if (mainNav.classList.contains("open")) {
-
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-xmark");
-
-        } else {
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
-        }
-
-    });
-
-
-    /* =========================================================
-       CLOSE MOBILE MENU WHEN LINK CLICKED
-    ========================================================= */
-
-    document
-        .querySelectorAll(".intek-nav-list a")
-        .forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                mainNav.classList.remove("open");
-
-                const icon =
-                    menuToggle.querySelector("i");
-
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
-
-            });
-
+    </footer>
+
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="floating-wa-btn" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 850,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 60
         });
-
-
-    /* =========================================================
-       PRODUCT MODAL
-    ========================================================= */
-
-    const modal =
-        document.getElementById("productModal");
-
-    const modalClose =
-        document.getElementById("modalClose");
-
-    const modalDismiss =
-        document.getElementById("modalDismissBtn");
-
-    const modalCode =
-        document.getElementById("modalCode");
-
-    const modalTitle =
-        document.getElementById("modalTitle");
-
-    const modalDesc =
-        document.getElementById("modalDesc");
-
-    const modalSpecs =
-        document.getElementById("modalSpecsContent");
-
-
-    document
-        .querySelectorAll(".view-modal-trigger")
-        .forEach(card => {
-
-            card.addEventListener("click", function () {
-
-                const name =
-                    this.dataset.name;
-
-                const code =
-                    this.dataset.code;
-
-                const desc =
-                    this.dataset.desc;
-
-                const specs =
-                    this.dataset.specs;
-
-                modalCode.textContent =
-                    code;
-
-                modalTitle.textContent =
-                    name;
-
-                modalDesc.textContent =
-                    desc;
-
-
-                modalSpecs.innerHTML = "";
-
-
-                specs
-                    .split("|")
-                    .forEach(spec => {
-
-                        const row =
-                            document.createElement("div");
-
-                        row.className =
-                            "spec-row";
-
-                        row.innerHTML = `
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>${spec.trim()}</span>
-                        `;
-
-                        modalSpecs.appendChild(row);
-
-                    });
-
-
-                modal.classList.add("active");
-
-                document.body.style.overflow =
-                    "hidden";
-
-            });
-
-        });
-
-
-    const requestedProduct =
-        new URLSearchParams(window.location.search).get("product");
-
-
-    if (requestedProduct) {
-
-        const requestedCard =
-            document.querySelector(
-                `[data-product-key="${requestedProduct}"]`
-            );
-
-
-        if (requestedCard) {
-
-            requestedCard.classList.add("requested-product");
-
-            requestedCard.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-
-        }
-
-    }
-
-
-    /* =========================================================
-       CLOSE MODAL
-    ========================================================= */
-
-    function closeModal() {
-
-        modal.classList.remove("active");
-
-        document.body.style.overflow =
-            "";
-
-    }
-
-
-    modalClose.addEventListener(
-        "click",
-        closeModal
-    );
-
-    modalDismiss.addEventListener(
-        "click",
-        closeModal
-    );
-
-
-    modal.addEventListener(
-        "click",
-        function(event) {
-
-            if (event.target === modal) {
-
-                closeModal();
-
-            }
-
-        }
-    );
-
-
-    document.addEventListener(
-        "keydown",
-        function(event) {
-
-            if (event.key === "Escape") {
-
-                closeModal();
-
-            }
-
-        }
-    );
-
-
-    /* =========================================================
-       SCROLL REVEAL
-    ========================================================= */
-
-    const revealElements =
-        document.querySelectorAll(".reveal");
-
-
-    const revealObserver =
-        new IntersectionObserver(
-
-            function(entries, observer) {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("show");
-
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                });
-
-            },
-
-            {
-                threshold: 0.08
-            }
-
-        );
-
-
-    revealElements.forEach(element => {
-
-        revealObserver.observe(element);
-
-    });
-
-</script>
-
+    </script>
 
 </body>
 </html>
