@@ -323,19 +323,48 @@
             padding: 26px 18px;
             text-align: center;
             position: relative;
+            background: #020b18;
+            border: 1px solid rgba(0, 168, 255, 0.45);
+            border-radius: 20px;
+            padding: 24px 14px 20px;
+            text-align: center;
             text-decoration: none;
             transition: all 0.35s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 200px;
+            min-height: 250px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 168, 255, 0.15);
+        }
+
+        .cat-cyber-card::before,
+        .cat-cyber-card::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-color: rgba(0, 234, 255, 0.6);
+            border-style: solid;
+            pointer-events: none;
+        }
+
+        .cat-cyber-card::before {
+            top: 8px;
+            left: 8px;
+            border-width: 2px 0 0 2px;
+        }
+
+        .cat-cyber-card::after {
+            bottom: 8px;
+            right: 8px;
+            border-width: 0 2px 2px 0;
         }
 
         .cat-cyber-card:hover {
-            border-color: var(--cyan);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 234, 255, 0.2);
+            border-color: #33ccff;
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), inset 0 0 18px rgba(0, 168, 255, 0.25);
         }
 
         .cat-index {
@@ -345,28 +374,63 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 13px;
             font-weight: 800;
-            color: rgba(0, 234, 255, 0.35);
+            color: rgba(0, 234, 255, 0.4);
         }
 
         .cat-icon-wrap {
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: rgba(0, 234, 255, 0.08);
-            border: 1px solid var(--border-glow);
-            color: var(--cyan);
+            position: relative;
+            width: 96px;
+            height: 96px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
+            border: none;
+            background: none;
+            box-shadow: none;
+        }
+
+        .cat-icon-wrap::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 88px;
+            height: 88px;
+            border: 1px solid rgba(0, 168, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .cat-icon-wrap::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 108px;
+            height: 1px;
+            background: rgba(0, 168, 255, 0.45);
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 8px rgba(0, 168, 255, 0.35);
+            pointer-events: none;
+        }
+
+        .cat-icon-wrap svg {
+            position: relative;
+            z-index: 1;
+            width: 62px;
+            height: 62px;
+            display: block;
+            color: #00a8ff;
+            filter: drop-shadow(0 0 6px rgba(0, 168, 255, 0.5));
             transition: all 0.3s ease;
         }
 
-        .cat-cyber-card:hover .cat-icon-wrap {
-            background: rgba(0, 234, 255, 0.2);
-            box-shadow: 0 0 16px rgba(0, 234, 255, 0.5);
-            transform: scale(1.08);
+        .cat-cyber-card:hover .cat-icon-wrap svg {
+            color: #00eaff;
+            filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.8));
+            transform: scale(1.06);
         }
 
         .cat-name {
@@ -666,7 +730,72 @@
 
         <!-- =====================================================
              3. PRODUCT CATEGORIES (SYNCHRONIZED WITH COUNTER SURVEILLANCE)
-        ====================================================== -->
+        ====================================================== -->        <!-- SVG SPRITE FOR NEON CYBER PRODUCT ICONS -->
+        <svg class="product-icon-sprite" style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+            <defs>
+                <symbol id="anti-drone" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><path d="M50 10v80M10 50h80" opacity=".8"/><path d="M50 30v30M31 39h38M36 54h28l-5 13H41l-5-13Z"/><path d="M21 21l58 58"/>
+                    </g>
+                </symbol>
+                <symbol id="camera" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><path d="M50 8v84M8 50h84" opacity=".8"/><path d="M32 39h36l7 8v19H25V47l7-8Z"/><circle cx="50" cy="56" r="10"/><path d="M39 39l4-7h14l4 7"/>
+                    </g>
+                </symbol>
+                <symbol id="drone" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M50 37v35M27 42h46M34 51h32l-6 17H40l-6-17Z"/><path d="M22 31c-7 0-12 4-12 9s5 7 12 7 12-2 12-7-5-9-12-9ZM78 31c7 0 12 4 12 9s-5 7-12 7-12-2-12-7 5-9 12-9Z"/><path d="M50 37c-5-6-9-10-15-10M50 37c5-6 9-10 15-10"/><circle cx="50" cy="80" r="5"/>
+                    </g>
+                </symbol>
+                <symbol id="junction" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><rect x="34" y="34" width="32" height="32" rx="4"/><circle cx="50" cy="50" r="8"/><path d="M50 14v16M50 70v16M14 50h16M70 50h16M40 22v8M60 22v8M40 70v8M60 70v8M22 40h8M22 60h8M70 40h8M70 60h8"/>
+                    </g>
+                </symbol>
+                <symbol id="wireless" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 42c15-15 41-15 56 0M31 52c10-10 28-10 38 0M41 62c5-5 13-5 18 0"/><circle cx="50" cy="72" r="3" fill="currentColor"/><path d="M12 82c12-7 24-7 36 0s24 7 40 0"/>
+                    </g>
+                </symbol>
+                <symbol id="jammer" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M28 25v52M43 17v60M58 10v67M73 25v52M21 77h59"/><path d="M24 87h52M29 77l-5 10M71 77l5 10"/><circle cx="28" cy="20" r="3"/><circle cx="43" cy="12" r="3"/><circle cx="58" cy="5" r="3"/><circle cx="73" cy="20" r="3"/><path d="M35 42h31M35 55h31"/>
+                    </g>
+                </symbol>
+                <symbol id="wbs-blaster" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><path d="M36 80l14-48 14 48M41 66h18M50 32V18"/><circle cx="50" cy="18" r="4"/><path d="M32 26c-8 6-12 16-12 26s4 20 12 26M68 26c8 6 12 16 12 26s-4 20-12 26"/>
+                    </g>
+                </symbol>
+                <symbol id="acoustic-jammer" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><rect x="40" y="24" width="20" height="34" rx="10"/><path d="M30 46c0 11 9 20 20 20s20-9 20-20M50 66v14M36 80h28"/><path d="M22 22l56 56" stroke="#00eaff" stroke-width="3.5"/>
+                    </g>
+                </symbol>
+                <symbol id="gps-spoofing" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><circle cx="50" cy="50" r="14"/><path d="M50 14v72M14 50h72"/><ellipse cx="50" cy="50" rx="34" ry="14" transform="rotate(-35 50 50)"/><circle cx="50" cy="50" r="4" fill="currentColor"/>
+                    </g>
+                </symbol>
+                <symbol id="wifi-analyzer" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><path d="M22 72h56M22 28v44"/><path d="M28 62l12-18 10 12 16-24 12 16" stroke-width="3.5"/><circle cx="40" cy="44" r="3" fill="currentColor"/><circle cx="66" cy="32" r="3" fill="currentColor"/>
+                    </g>
+                </symbol>
+                <symbol id="long-range-camera" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><path d="M20 44h38l14-12v36l-14-12H20V44Z"/><circle cx="38" cy="50" r="8"/><circle cx="82" cy="50" r="3" fill="currentColor"/><path d="M28 60v14h20V60M22 74h32"/>
+                    </g>
+                </symbol>
+                <symbol id="enterprise-it" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><rect x="30" y="24" width="40" height="14" rx="3"/><rect x="30" y="43" width="40" height="14" rx="3"/><rect x="30" y="62" width="40" height="14" rx="3"/><circle cx="38" cy="31" r="2" fill="currentColor"/><circle cx="38" cy="50" r="2" fill="currentColor"/><circle cx="38" cy="69" r="2" fill="currentColor"/><path d="M54 31h10M54 50h10M54 69h10"/>
+                    </g>
+                </symbol>
+            </defs>
+        </svg>
+
         <section class="categories-section" id="categories">
             <div class="intek-container">
                 
@@ -686,7 +815,7 @@
                     <a href="product-anti-drone.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="50">
                         <span class="cat-index">01</span>
                         <div class="cat-icon-wrap">
-                            <i class="fa-solid fa-shield-halved"></i>
+                            <svg aria-hidden="true"><use href="#anti-drone"></use></svg>
                         </div>
                         <div class="cat-name">ANTI<br>DRONE</div>
                     </a>
@@ -695,7 +824,7 @@
                     <a href="product-camera.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="80">
                         <span class="cat-index">02</span>
                         <div class="cat-icon-wrap">
-                            <i class="fa-solid fa-camera"></i>
+                            <svg aria-hidden="true"><use href="#camera"></use></svg>
                         </div>
                         <div class="cat-name">CAMERA<br>DETECTOR</div>
                     </a>
@@ -704,7 +833,7 @@
                     <a href="product-drone.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="110">
                         <span class="cat-index">03</span>
                         <div class="cat-icon-wrap">
-                            <i class="fa-solid fa-crosshairs"></i>
+                            <svg aria-hidden="true"><use href="#drone"></use></svg>
                         </div>
                         <div class="cat-name">DRONE<br>HUNTER</div>
                     </a>
@@ -713,7 +842,7 @@
                     <a href="product-junction-detector.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="140">
                         <span class="cat-index">04</span>
                         <div class="cat-icon-wrap">
-                            <i class="fa-solid fa-microchip"></i>
+                            <svg aria-hidden="true"><use href="#junction"></use></svg>
                         </div>
                         <div class="cat-name">JUNCTION<br>DETECTOR</div>
                     </a>
@@ -722,7 +851,7 @@
                     <a href="product-wireless.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="170">
                         <span class="cat-index">05</span>
                         <div class="cat-icon-wrap">
-                            <i class="fa-solid fa-wifi"></i>
+                            <svg aria-hidden="true"><use href="#wireless"></use></svg>
                         </div>
                         <div class="cat-name">WIRELESS<br>EAVESDROPPING</div>
                     </a>
@@ -731,7 +860,7 @@
                     <a href="product-jammer.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="200">
                         <span class="cat-index">06</span>
                         <div class="cat-icon-wrap">
-                            <i class="fa-solid fa-bolt"></i>
+                            <svg aria-hidden="true"><use href="#jammer"></use></svg>
                         </div>
                         <div class="cat-name">JAMMER<br>(WHITELIST &amp; BLACKLIST)</div>
                     </a>
@@ -740,7 +869,7 @@
                     <a href="product-wbs-blaster.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="230">
                         <span class="cat-index">07</span>
                         <div class="cat-icon-wrap">
-                            <i class="fa-solid fa-tower-broadcast"></i>
+                            <svg aria-hidden="true"><use href="#wbs-blaster"></use></svg>
                         </div>
                         <div class="cat-name">WBS<br>BLASTER</div>
                     </a>
@@ -749,7 +878,7 @@
                     <a href="product-acoustic-jammer.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="260">
                         <span class="cat-index">08</span>
                         <div class="cat-icon-wrap">
-                            <i class="fa-solid fa-microphone-slash"></i>
+                            <svg aria-hidden="true"><use href="#acoustic-jammer"></use></svg>
                         </div>
                         <div class="cat-name">ACOUSTIC<br>JAMMER</div>
                     </a>
@@ -758,7 +887,7 @@
                     <a href="product-gps-spoofing.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="290">
                         <span class="cat-index">09</span>
                         <div class="cat-icon-wrap">
-                            <i class="fa-solid fa-satellite-dish"></i>
+                            <svg aria-hidden="true"><use href="#gps-spoofing"></use></svg>
                         </div>
                         <div class="cat-name">GPS<br>SPOOFING</div>
                     </a>
@@ -767,7 +896,7 @@
                     <a href="product-wifi-analyzer.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="320">
                         <span class="cat-index">10</span>
                         <div class="cat-icon-wrap">
-                            <i class="fa-solid fa-chart-line"></i>
+                            <svg aria-hidden="true"><use href="#wifi-analyzer"></use></svg>
                         </div>
                         <div class="cat-name">WIFI<br>ANALYZER</div>
                     </a>
@@ -776,7 +905,7 @@
                     <a href="product-long-range-camera.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="350">
                         <span class="cat-index">11</span>
                         <div class="cat-icon-wrap">
-                            <i class="fa-solid fa-video"></i>
+                            <svg aria-hidden="true"><use href="#long-range-camera"></use></svg>
                         </div>
                         <div class="cat-name">LONG RANGE<br>CAMERA</div>
                     </a>
@@ -785,13 +914,12 @@
                     <a href="contact.html" class="cat-cyber-card" data-aos="fade-up" data-aos-delay="380">
                         <span class="cat-index">12</span>
                         <div class="cat-icon-wrap">
-                            <i class="fa-solid fa-server"></i>
+                            <svg aria-hidden="true"><use href="#enterprise-it"></use></svg>
                         </div>
                         <div class="cat-name">ENTERPRISE<br>IT &amp; SERVERS</div>
                     </a>
 
                 </div>
-
             </div>
         </section>
 
@@ -840,9 +968,9 @@
                         <i class="fa-solid fa-phone"></i>
                         <span>(+62 21) 3871-1261</span>
                     </a>
-                    <a href="mailto:info@fortunetindonesia.com" class="footer-contact-chip">
+                    <a href="mailto:fortunet.indonesia@gmail.com" class="footer-contact-chip">
                         <i class="fa-solid fa-envelope"></i>
-                        <span>info@fortunetindonesia.com</span>
+                        <span>fortunet.indonesia@gmail.com</span>
                     </a>
                 </div>
             </div>

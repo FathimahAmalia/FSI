@@ -196,39 +196,85 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ─────────────────────────────────────────────────────────────────────────
-// 6. CONTACT FORM SUBMISSION
+// 6. CONTACT FORM SUBMISSION -> fortunet.indonesia@gmail.com
 // ─────────────────────────────────────────────────────────────────────────
-function handleFormSubmit(event) {
+async function handleFormSubmit(event) {
     event.preventDefault();
     const form = event.target;
-    const submitBtn  = form.querySelector("#submitBtn");
+    const submitBtn = form.querySelector("#submitBtn");
     const formFeedback = document.getElementById("formFeedback");
 
     if (!form || !submitBtn) return false;
+
+    const name = form.querySelector("#clientName")?.value || "";
+    const company = form.querySelector("#clientCompany")?.value || "";
+    const email = form.querySelector("#clientEmail")?.value || "";
+    const phone = form.querySelector("#clientPhone")?.value || "";
+    const service = form.querySelector("#serviceNeeded")?.value || "";
+    const message = form.querySelector("#clientMessage")?.value || "";
 
     const originalText = submitBtn.textContent;
     submitBtn.textContent = "Sending Message...";
     submitBtn.disabled = true;
 
-    setTimeout(() => {
-        submitBtn.textContent = "Message Sent!";
+    try {
+        const response = await fetch("https://formsubmit.co/ajax/fortunet.indonesia@gmail.com", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                _subject: `New Inquiry from FSI Website: ${name} (${company})`,
+                _replyto: email,
+                "Full Name": name,
+                "Company / Organization": company,
+                "Email": email,
+                "Phone / WhatsApp": phone,
+                "Service Required": service,
+                "Message": message
+            })
+        });
+
+        if (response.ok) {
+            submitBtn.textContent = "Message Sent!";
+            submitBtn.style.backgroundColor = "#10b981";
+
+            if (formFeedback) {
+                formFeedback.className = "form-feedback success";
+                formFeedback.innerHTML =
+                    '<i class="fa-solid fa-circle-check"></i> Thank you. Your message has been sent directly to our team at <strong>fortunet.indonesia@gmail.com</strong>. We will respond promptly.';
+            }
+
+            form.reset();
+        } else {
+            throw new Error("Submission network response was not ok");
+        }
+    } catch (err) {
+        // Fallback: Open pre-filled email client if fetch fails
+        submitBtn.textContent = "Opening Email...";
         submitBtn.style.backgroundColor = "#10b981";
 
         if (formFeedback) {
             formFeedback.className = "form-feedback success";
             formFeedback.innerHTML =
-                '<i class="fa-solid fa-circle-check"></i> Thank you. Your message has been received. Our team will contact you shortly.';
+                '<i class="fa-solid fa-circle-check"></i> Preparing your email to <strong>fortunet.indonesia@gmail.com</strong>...';
         }
 
-        form.reset();
-
+        const mailtoUrl = `mailto:fortunet.indonesia@gmail.com?subject=${encodeURIComponent("New Inquiry: " + name + " (" + company + ")")}&body=${encodeURIComponent("Name: " + name + "\nCompany: " + company + "\nEmail: " + email + "\nPhone: " + phone + "\nService: " + service + "\n\nMessage:\n" + message)}`;
+        window.location.href = mailtoUrl;
+    } finally {
         setTimeout(() => {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
             submitBtn.style.backgroundColor = "";
-            if (formFeedback) formFeedback.className = "form-feedback hidden";
-        }, 5000);
-    }, 800);
+            if (formFeedback) {
+                setTimeout(() => {
+                    formFeedback.className = "form-feedback hidden";
+                }, 7000);
+            }
+        }, 3500);
+    }
 
     return false;
 }

@@ -67,12 +67,73 @@
             </div>
         </section>
 
+        <!-- SVG SPRITE FOR NEON CYBER PRODUCT ICONS -->
+        <svg class="product-icon-sprite" style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+            <defs>
+                <symbol id="anti-drone" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><path d="M50 10v80M10 50h80" opacity=".8"/><path d="M50 30v30M31 39h38M36 54h28l-5 13H41l-5-13Z"/><path d="M21 21l58 58"/>
+                    </g>
+                </symbol>
+                <symbol id="camera" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><path d="M50 8v84M8 50h84" opacity=".8"/><path d="M32 39h36l7 8v19H25V47l7-8Z"/><circle cx="50" cy="56" r="10"/><path d="M39 39l4-7h14l4 7"/>
+                    </g>
+                </symbol>
+                <symbol id="drone" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M50 37v35M27 42h46M34 51h32l-6 17H40l-6-17Z"/><path d="M22 31c-7 0-12 4-12 9s5 7 12 7 12-2 12-7-5-9-12-9ZM78 31c7 0 12 4 12 9s-5 7-12 7-12-2-12-7 5-9 12-9Z"/><path d="M50 37c-5-6-9-10-15-10M50 37c5-6 9-10 15-10"/><circle cx="50" cy="80" r="5"/>
+                    </g>
+                </symbol>
+                <symbol id="junction" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><rect x="34" y="34" width="32" height="32" rx="4"/><circle cx="50" cy="50" r="8"/><path d="M50 14v16M50 70v16M14 50h16M70 50h16M40 22v8M60 22v8M40 70v8M60 70v8M22 40h8M22 60h8M70 40h8M70 60h8"/>
+                    </g>
+                </symbol>
+                <symbol id="wireless" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 42c15-15 41-15 56 0M31 52c10-10 28-10 38 0M41 62c5-5 13-5 18 0"/><circle cx="50" cy="72" r="3" fill="currentColor"/><path d="M12 82c12-7 24-7 36 0s24 7 40 0"/>
+                    </g>
+                </symbol>
+                <symbol id="jammer" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M28 25v52M43 17v60M58 10v67M73 25v52M21 77h59"/><path d="M24 87h52M29 77l-5 10M71 77l5 10"/><circle cx="28" cy="20" r="3"/><circle cx="43" cy="12" r="3"/><circle cx="58" cy="5" r="3"/><circle cx="73" cy="20" r="3"/><path d="M35 42h31M35 55h31"/>
+                    </g>
+                </symbol>
+                <symbol id="wbs-blaster" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><path d="M36 80l14-48 14 48M41 66h18M50 32V18"/><circle cx="50" cy="18" r="4"/><path d="M32 26c-8 6-12 16-12 26s4 20 12 26M68 26c8 6 12 16 12 26s-4 20-12 26"/>
+                    </g>
+                </symbol>
+                <symbol id="acoustic-jammer" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><rect x="40" y="24" width="20" height="34" rx="10"/><path d="M30 46c0 11 9 20 20 20s20-9 20-20M50 66v14M36 80h28"/><path d="M22 22l56 56" stroke="#00eaff" stroke-width="3.5"/>
+                    </g>
+                </symbol>
+                <symbol id="gps-spoofing" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><circle cx="50" cy="50" r="14"/><path d="M50 14v72M14 50h72"/><ellipse cx="50" cy="50" rx="34" ry="14" transform="rotate(-35 50 50)"/><circle cx="50" cy="50" r="4" fill="currentColor"/>
+                    </g>
+                </symbol>
+                <symbol id="wifi-analyzer" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><path d="M22 72h56M22 28v44"/><path d="M28 62l12-18 10 12 16-24 12 16" stroke-width="3.5"/><circle cx="40" cy="44" r="3" fill="currentColor"/><circle cx="66" cy="32" r="3" fill="currentColor"/>
+                    </g>
+                </symbol>
+                <symbol id="long-range-camera" viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="50" cy="50" r="36"/><path d="M20 44h38l14-12v36l-14-12H20V44Z"/><circle cx="38" cy="50" r="8"/><circle cx="82" cy="50" r="3" fill="currentColor"/><path d="M28 60v14h20V60M22 74h32"/>
+                    </g>
+                </symbol>
+            </defs>
+        </svg>
+
         <section class="intek-section counter-products-section">
             <div class="intek-container">
                 <div class="counter-products-grid counter-products-grid-top">
                     <a href="product-anti-drone.html" class="counter-product-card" data-aos="zoom-in" data-aos-delay="0">
                         <div class="counter-product-icon">
-                            <img src="assets/anti-drone-glyph.png" alt="Anti Drone Icon" style="width: 58px; height: 58px; object-fit: contain;">
+                            <svg class="counter-neon-icon" aria-hidden="true"><use href="#anti-drone"></use></svg>
                         </div>
                         <div class="counter-product-name">ANTI<br>DRONE</div>
                         <div class="counter-product-tag">ANTI DRONE STATIC</div>
@@ -80,7 +141,7 @@
 
                     <a href="product-camera.html" class="counter-product-card" data-aos="zoom-in" data-aos-delay="50">
                         <div class="counter-product-icon">
-                            <i class="fa-solid fa-camera"></i>
+                            <svg class="counter-neon-icon" aria-hidden="true"><use href="#camera"></use></svg>
                         </div>
                         <div class="counter-product-name">CAMERA<br>DETECTOR</div>
                         <div class="counter-product-tag">RF &amp; CAMERA DETECTOR</div>
@@ -88,7 +149,7 @@
 
                     <a href="product-drone.html" class="counter-product-card" data-aos="zoom-in" data-aos-delay="100">
                         <div class="counter-product-icon">
-                            <i class="fa-solid fa-crosshairs"></i>
+                            <svg class="counter-neon-icon" aria-hidden="true"><use href="#drone"></use></svg>
                         </div>
                         <div class="counter-product-name">DRONE<br>HUNTER</div>
                         <div class="counter-product-tag">DRONE HUNTER</div>
@@ -96,7 +157,7 @@
 
                     <a href="product-junction-detector.html" class="counter-product-card" data-aos="zoom-in" data-aos-delay="150">
                         <div class="counter-product-icon">
-                            <i class="fa-solid fa-microchip"></i>
+                            <svg class="counter-neon-icon" aria-hidden="true"><use href="#junction"></use></svg>
                         </div>
                         <div class="counter-product-name">JUNCTION<br>DETECTOR</div>
                         <div class="counter-product-tag">NON-LINEAR JUNCTION DETECTOR</div>
@@ -104,7 +165,7 @@
 
                     <a href="product-wireless.html" class="counter-product-card" data-aos="zoom-in" data-aos-delay="200">
                         <div class="counter-product-icon">
-                            <i class="fa-solid fa-wifi"></i>
+                            <svg class="counter-neon-icon" aria-hidden="true"><use href="#wireless"></use></svg>
                         </div>
                         <div class="counter-product-name">WIRELESS<br>EAVESDROPPING</div>
                         <div class="counter-product-tag">WIRELESS EAVESDROPPING</div>
@@ -112,7 +173,7 @@
 
                     <a href="product-jammer.html" class="counter-product-card" data-aos="zoom-in" data-aos-delay="250">
                         <div class="counter-product-icon">
-                            <i class="fa-solid fa-bolt"></i>
+                            <svg class="counter-neon-icon" aria-hidden="true"><use href="#jammer"></use></svg>
                         </div>
                         <div class="counter-product-name">JAMMER</div>
                         <div class="counter-product-tag">JAMMER WHITELIST &amp; BLACKLIST</div>
@@ -120,7 +181,7 @@
 
                     <a href="product-wbs-blaster.html" class="counter-product-card" data-aos="zoom-in" data-aos-delay="300">
                         <div class="counter-product-icon">
-                            <i class="fa-solid fa-tower-broadcast"></i>
+                            <svg class="counter-neon-icon" aria-hidden="true"><use href="#wbs-blaster"></use></svg>
                         </div>
                         <div class="counter-product-name">WBS<br>BLASTER</div>
                         <div class="counter-product-tag">WBS BLASTER</div>
@@ -128,7 +189,7 @@
 
                     <a href="product-acoustic-jammer.html" class="counter-product-card" data-aos="zoom-in" data-aos-delay="350">
                         <div class="counter-product-icon">
-                            <i class="fa-solid fa-microphone-slash"></i>
+                            <svg class="counter-neon-icon" aria-hidden="true"><use href="#acoustic-jammer"></use></svg>
                         </div>
                         <div class="counter-product-name">ACOUSTIC<br>JAMMER</div>
                         <div class="counter-product-tag">AUDIO PRIVACY PROTECTION</div>
@@ -138,7 +199,7 @@
                 <div class="counter-products-grid counter-products-grid-bottom">
                     <a href="product-gps-spoofing.html" class="counter-product-card" data-aos="zoom-in" data-aos-delay="400">
                         <div class="counter-product-icon">
-                            <i class="fa-solid fa-satellite-dish"></i>
+                            <svg class="counter-neon-icon" aria-hidden="true"><use href="#gps-spoofing"></use></svg>
                         </div>
                         <div class="counter-product-name">GPS<br>SPOOFING</div>
                         <div class="counter-product-tag">GNSS SIGNAL SIMULATION</div>
@@ -146,7 +207,7 @@
 
                     <a href="product-wifi-analyzer.html" class="counter-product-card" data-aos="zoom-in" data-aos-delay="450">
                         <div class="counter-product-icon">
-                            <i class="fa-solid fa-chart-line"></i>
+                            <svg class="counter-neon-icon" aria-hidden="true"><use href="#wifi-analyzer"></use></svg>
                         </div>
                         <div class="counter-product-name">WIFI<br>ANALYZER</div>
                         <div class="counter-product-tag">SPECTRUM &amp; THREAT ANALYSIS</div>
@@ -154,7 +215,7 @@
 
                     <a href="product-long-range-camera.html" class="counter-product-card" data-aos="zoom-in" data-aos-delay="500">
                         <div class="counter-product-icon">
-                            <i class="fa-solid fa-video"></i>
+                            <svg class="counter-neon-icon" aria-hidden="true"><use href="#long-range-camera"></use></svg>
                         </div>
                         <div class="counter-product-name">LONG RANGE<br>CAMERA</div>
                         <div class="counter-product-tag">LONG-DISTANCE SURVEILLANCE</div>
@@ -184,9 +245,9 @@
                         <i class="fa-solid fa-phone"></i>
                         <span>(+62 21) 3871-1261</span>
                     </a>
-                    <a href="mailto:info@fortunetindonesia.com" class="footer-contact-chip">
+                    <a href="mailto:fortunet.indonesia@gmail.com" class="footer-contact-chip">
                         <i class="fa-solid fa-envelope"></i>
-                        <span>info@fortunetindonesia.com</span>
+                        <span>fortunet.indonesia@gmail.com</span>
                     </a>
                 </div>
             </div>
